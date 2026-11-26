@@ -2188,6 +2188,18 @@
         grid-template-columns: repeat(2, 1fr);
       }
     }
+    .project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-img {
+  transform: scale(1.04);
+}
   </style>
 </head>
 <body>
@@ -2477,8 +2489,10 @@
                 <span class="chrome-url">http://lotosmart.online/</span>
               </div>
               <div class="mockup-viewport">
+                <img src="assets/lotosmart.jpg" alt="LotoSmart Dashboard" class="project-img" />
+          </div>
                 <!-- SUBSTITUIR PELO PRINT REAL: <img src="assets/lotosmart.jpg" alt="LotoSmart Dashboard" /> -->
-                <div class="mk-loto" aria-hidden="true">
+                <!-- <div class="mk-loto" aria-hidden="true">
                   <div class="mk-loto-side">
                     <div class="mk-loto-brand">LotoSmart</div>
                     <div class="mk-loto-nav active">Início</div>
@@ -2487,7 +2501,7 @@
                     <div class="mk-loto-nav">Estatísticas</div>
                     <div class="mk-loto-nav">Fechamentos</div>
                     <div class="mk-loto-nav">Conferência</div>
-                  </div>
+                  </div> -->
                   <div class="mk-loto-main">
                     <div class="mk-loto-banner">
                       <div>
