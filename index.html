@@ -3,27 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfólio completo de Enock Marques — Desenvolvedor Full Stack | Python (FastAPI, Flask) • JavaScript • SQL • Docker." />
+  <meta name="description" content="Portfólio de Enock Marques — Desenvolvedor Full Stack | Python (FastAPI, Flask) • JavaScript • SQL • Docker. Natal/RN." />
   <title>Enock Marques | Desenvolvedor Full Stack</title>
 
-  <!-- Google Fonts: Plus Jakarta Sans (UI/Títulos) & JetBrains Mono (Código/Métricas) -->
+  <!-- Fontes do Google: Plus Jakarta Sans (UI/Títulos) e JetBrains Mono (Código/Métricas) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <style>
     /* ==========================================================================
-       1. DESIGN TOKENS & RESET GLOBAL
+       1. VARIÁVEIS DE DESIGN (TOKENS) & RESET
        ========================================================================== */
     :root {
       --bg-base: #070709;
-      --bg-elevated: #0d1017;
-      --bg-surface: #121722;
-      --bg-glass: rgba(13, 16, 23, 0.78);
+      --bg-elevated: #0c0d12;
+      --bg-surface: #12151f;
+      --bg-glass: rgba(12, 13, 18, 0.8);
 
       --border-subtle: rgba(255, 255, 255, 0.08);
       --border-strong: rgba(255, 255, 255, 0.16);
-      --border-accent: rgba(16, 185, 129, 0.35);
+      --border-accent: rgba(16, 185, 129, 0.38);
 
       --text-primary: #f4f6fb;
       --text-secondary: #94a3b8;
@@ -31,11 +31,8 @@
 
       --emerald: #10b981;
       --emerald-light: #34d399;
-      --emerald-glow: rgba(16, 185, 129, 0.16);
       --cyan: #06b6d4;
       --cyan-light: #22d3ee;
-      --cyan-glow: rgba(6, 182, 212, 0.16);
-      --violet-glow: rgba(99, 102, 241, 0.12);
 
       --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
@@ -87,8 +84,12 @@
       cursor: pointer;
     }
 
+    img {
+      max-width: 100%;
+    }
+
     /* ==========================================================================
-       2. BARRA DE PROGRESSO DE ROLAGEM & AMBIENTAÇÃO DE FUNDO
+       2. BARRA DE PROGRESSO & FUNDO TECNOLÓGICO
        ========================================================================== */
     .scroll-progress {
       position: fixed;
@@ -118,7 +119,7 @@
     .ambient-orb {
       position: fixed;
       border-radius: 50%;
-      filter: blur(90px);
+      filter: blur(95px);
       z-index: -2;
       pointer-events: none;
       opacity: 0.6;
@@ -195,17 +196,17 @@
 
     .section-desc {
       color: var(--text-secondary);
-      max-width: 600px;
+      max-width: 620px;
       font-size: 0.98rem;
       margin-top: 10px;
     }
 
     /* ==========================================================================
-       3. EFEITO SPOTLIGHT GLOBAL PARA CARDS
+       3. EFEITO SPOTLIGHT NOS CARDS
        ========================================================================== */
     .spotlight-card {
       position: relative;
-      background: linear-gradient(160deg, rgba(18, 23, 34, 0.85), rgba(13, 16, 23, 0.92));
+      background: linear-gradient(160deg, rgba(18, 21, 31, 0.88), rgba(12, 13, 18, 0.95));
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-lg);
       overflow: hidden;
@@ -221,8 +222,8 @@
       background: radial-gradient(
         520px circle at var(--mouse-x) var(--mouse-y),
         rgba(16, 185, 129, 0.12),
-        rgba(6, 182, 212, 0.05) 30%,
-        transparent 60%
+        rgba(6, 182, 212, 0.05) 32%,
+        transparent 62%
       );
       opacity: 0;
       transition: opacity 0.35s var(--ease);
@@ -231,9 +232,9 @@
     }
 
     .spotlight-card:hover {
-      border-color: rgba(16, 185, 129, 0.35);
+      border-color: var(--border-accent);
       transform: translateY(-4px);
-      box-shadow: 0 22px 46px rgba(0, 0, 0, 0.45);
+      box-shadow: 0 22px 46px rgba(0, 0, 0, 0.48);
     }
 
     .spotlight-card:hover::before {
@@ -246,7 +247,7 @@
     }
 
     /* ==========================================================================
-       4. NAVBAR FIXA & RESPONSIVA
+       4. NAVEGAÇÃO SUPERIOR FIXA
        ========================================================================== */
     .navbar {
       position: fixed;
@@ -255,7 +256,7 @@
       right: 0;
       height: var(--nav-height);
       z-index: 100;
-      background: rgba(7, 7, 9, 0.78);
+      background: rgba(7, 7, 9, 0.8);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
       border-bottom: 1px solid var(--border-subtle);
@@ -286,6 +287,7 @@
       background: var(--emerald);
       box-shadow: 0 0 12px var(--emerald);
       position: relative;
+      flex-shrink: 0;
     }
 
     .brand-dot::after {
@@ -342,7 +344,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 8px 13px;
+      padding: 8px 12px;
       border-radius: var(--radius-sm);
       background: var(--bg-elevated);
       border: 1px solid var(--border-subtle);
@@ -355,7 +357,6 @@
     .cmd-trigger:hover {
       border-color: var(--border-accent);
       color: var(--text-primary);
-      box-shadow: 0 0 16px rgba(16, 185, 129, 0.14);
     }
 
     .cmd-trigger kbd {
@@ -365,6 +366,21 @@
       border: 1px solid var(--border-subtle);
       color: var(--emerald-light);
       font-size: 0.72rem;
+    }
+
+    .nav-cta {
+      padding: 9px 16px;
+      border-radius: var(--radius-sm);
+      background: linear-gradient(135deg, var(--emerald), var(--cyan));
+      color: #041218;
+      font-size: 0.84rem;
+      font-weight: 700;
+      transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(16, 185, 129, 0.28);
     }
 
     .hamburger {
@@ -380,12 +396,12 @@
     }
 
     /* ==========================================================================
-       5. HERO SECTION COM CANVAS DE PARTÍCULAS + IDE INTERATIVA
+       5. HERO DINÂMICO (CANVAS + TYPEWRITER + IDE INTERATIVA)
        ========================================================================== */
     .hero {
-      padding-top: calc(var(--nav-height) + 48px);
-      padding-bottom: 80px;
-      min-height: 96vh;
+      padding-top: calc(var(--nav-height) + 44px);
+      padding-bottom: 84px;
+      min-height: 95vh;
       display: flex;
       align-items: center;
       overflow: hidden;
@@ -398,7 +414,7 @@
       height: 100%;
       z-index: 0;
       pointer-events: none;
-      opacity: 0.75;
+      opacity: 0.78;
     }
 
     .hero .container {
@@ -428,7 +444,7 @@
     }
 
     .hero h1 {
-      font-size: clamp(2.7rem, 5.4vw, 4.15rem);
+      font-size: clamp(2.65rem, 5.2vw, 4.1rem);
       font-weight: 800;
       letter-spacing: -0.04em;
       line-height: 1.06;
@@ -438,16 +454,28 @@
       -webkit-text-fill-color: transparent;
     }
 
+    .hero-headline {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: #e2e8f0;
+      padding: 8px 13px;
+      border-radius: var(--radius-sm);
+      background: rgba(18, 21, 31, 0.85);
+      border: 1px solid var(--border-subtle);
+      display: inline-block;
+      margin-bottom: 16px;
+    }
+
     .typing-wrapper {
       display: flex;
       align-items: center;
       gap: 8px;
       font-family: var(--font-mono);
-      font-size: clamp(1rem, 1.8vw, 1.24rem);
+      font-size: clamp(0.95rem, 1.55vw, 1.12rem);
       font-weight: 600;
       color: var(--cyan-light);
-      min-height: 34px;
-      margin-bottom: 14px;
+      min-height: 32px;
+      margin-bottom: 16px;
     }
 
     .typing-prefix {
@@ -467,23 +495,11 @@
       51%, 100% { opacity: 0; }
     }
 
-    .hero-headline {
-      font-family: var(--font-mono);
-      font-size: 0.82rem;
-      color: #cbd5e1;
-      padding: 8px 13px;
-      border-radius: var(--radius-sm);
-      background: rgba(18, 23, 34, 0.8);
-      border: 1px solid var(--border-subtle);
-      display: inline-block;
-      margin-bottom: 18px;
-    }
-
     .hero-desc {
       color: var(--text-secondary);
-      font-size: 1rem;
+      font-size: 0.98rem;
       max-width: 580px;
-      margin-bottom: 28px;
+      margin-bottom: 26px;
     }
 
     .hero-cta-row {
@@ -491,10 +507,10 @@
       flex-wrap: wrap;
       align-items: center;
       gap: 12px;
-      margin-bottom: 34px;
+      margin-bottom: 32px;
     }
 
-    /* Botões */
+    /* Botões reutilizáveis */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -511,7 +527,7 @@
     .btn-primary {
       background: linear-gradient(135deg, var(--emerald), var(--cyan));
       color: #041218;
-      box-shadow: 0 10px 26px rgba(16, 185, 129, 0.25);
+      box-shadow: 0 10px 26px rgba(16, 185, 129, 0.24);
     }
 
     .btn-primary:hover {
@@ -531,59 +547,39 @@
       transform: translateY(-2px);
     }
 
-    .icon-btn {
-      width: 44px;
-      height: 44px;
-      border-radius: var(--radius-sm);
-      background: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-secondary);
-      transition: all 0.25s var(--ease);
-    }
-
-    .icon-btn:hover {
-      color: var(--emerald-light);
-      border-color: var(--border-accent);
-      transform: translateY(-2px);
-    }
-
-    /* Faixa de Métricas Animadas */
+    /* Métricas animadas */
     .metrics-strip {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 12px;
-      padding-top: 24px;
+      padding-top: 22px;
       border-top: 1px solid var(--border-subtle);
     }
 
     .metric-item {
-      background: rgba(13, 16, 23, 0.72);
+      background: rgba(12, 13, 18, 0.78);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
-      padding: 12px 14px;
+      padding: 14px 16px;
     }
 
     .metric-val {
       font-family: var(--font-mono);
-      font-size: 1.15rem;
+      font-size: 1.25rem;
       font-weight: 700;
       color: var(--emerald-light);
       line-height: 1.2;
     }
 
     .metric-label {
-      font-size: 0.72rem;
+      font-size: 0.75rem;
       color: var(--text-secondary);
       margin-top: 4px;
-      line-height: 1.3;
     }
 
-    /* Widget Interativo estilo IDE / Terminal */
+    /* Widget IDE / Terminal interativo */
     .ide-window {
-      background: rgba(11, 14, 20, 0.92);
+      background: rgba(11, 13, 19, 0.94);
       border: 1px solid var(--border-strong);
       border-radius: var(--radius-lg);
       overflow: hidden;
@@ -596,7 +592,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 10px 14px;
-      background: #0d1017;
+      background: var(--bg-elevated);
       border-bottom: 1px solid var(--border-subtle);
       gap: 10px;
     }
@@ -633,7 +629,7 @@
 
     .ide-tab:hover {
       color: var(--text-primary);
-      background: rgba(255, 255, 255, 0.04);
+      background: rgba(255, 255, 255, 0.05);
     }
 
     .ide-tab.active {
@@ -645,9 +641,9 @@
     .ide-code-area {
       padding: 18px 20px;
       font-family: var(--font-mono);
-      font-size: 0.8rem;
+      font-size: 0.79rem;
       line-height: 1.72;
-      min-height: 255px;
+      min-height: 250px;
       overflow-x: auto;
       color: #cbd5e1;
     }
@@ -658,7 +654,7 @@
 
     .ide-code-pane.active {
       display: block;
-      animation: fadeTab 0.25s ease;
+      animation: fadeTab 0.24s ease;
     }
 
     @keyframes fadeTab {
@@ -666,7 +662,6 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Syntax Highlighting */
     .sy-kw { color: #c084fc; }
     .sy-fn { color: #38bdf8; }
     .sy-str { color: #34d399; }
@@ -676,7 +671,7 @@
 
     .ide-terminal {
       border-top: 1px solid var(--border-subtle);
-      background: #07090e;
+      background: #07080c;
       padding: 14px 18px;
     }
 
@@ -726,8 +721,8 @@
       font-size: 0.74rem;
       line-height: 1.6;
       color: #94a3b8;
-      min-height: 76px;
-      max-height: 120px;
+      min-height: 78px;
+      max-height: 124px;
       overflow-y: auto;
     }
 
@@ -735,94 +730,7 @@
     .terminal-output .info { color: var(--cyan-light); }
 
     /* ==========================================================================
-       6. SEÇÃO SOBRE & DIFERENCIAIS (BENTO GRID RICO)
-       ========================================================================== */
-    .about-bento {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 20px;
-    }
-
-    .about-bio-card {
-      padding: 32px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .about-bio-card h3 {
-      font-size: 1.4rem;
-      font-weight: 700;
-      letter-spacing: -0.025em;
-    }
-
-    .about-bio-card p {
-      color: var(--text-secondary);
-      font-size: 0.96rem;
-    }
-
-    .bio-highlights {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      padding-top: 12px;
-      border-top: 1px solid var(--border-subtle);
-    }
-
-    .bio-chip {
-      font-family: var(--font-mono);
-      font-size: 0.74rem;
-      padding: 5px 11px;
-      border-radius: var(--radius-pill);
-      background: rgba(6, 182, 212, 0.1);
-      border: 1px solid rgba(6, 182, 212, 0.24);
-      color: #a5f3fc;
-    }
-
-    .pillars-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
-
-    .pillar-card {
-      padding: 22px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .pillar-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
-      display: grid;
-      place-items: center;
-      background: rgba(16, 185, 129, 0.12);
-      border: 1px solid rgba(16, 185, 129, 0.25);
-      color: var(--emerald-light);
-    }
-
-    .pillar-icon.cyan {
-      background: rgba(6, 182, 212, 0.12);
-      border-color: rgba(6, 182, 212, 0.25);
-      color: var(--cyan-light);
-    }
-
-    .pillar-card h4 {
-      font-size: 0.98rem;
-      font-weight: 700;
-    }
-
-    .pillar-card p {
-      font-size: 0.84rem;
-      color: var(--text-secondary);
-      line-height: 1.55;
-    }
-
-    /* ==========================================================================
-       7. PROJETOS EM DESTAQUE (FILTROS + MOCKUPS INTERATIVOS)
+       6. PROJETOS EM DESTAQUE (MOLDURAS DE NAVEGADOR + IMAGENS REAIS)
        ========================================================================== */
     .filter-pills {
       display: flex;
@@ -866,37 +774,39 @@
     .project-card.featured {
       grid-column: span 2;
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: 1.18fr 0.82fr;
+      align-items: stretch;
     }
 
     .project-card.hidden {
       display: none;
     }
 
-    /* Frame de navegador para os mockups */
+    /* Moldura de navegador com proporção 16/10 rígida e zero overflow */
     .mockup-frame {
-      background: #090b10;
+      background: #0d1117;
       border-bottom: 1px solid var(--border-subtle);
       display: flex;
       flex-direction: column;
       overflow: hidden;
-      min-height: 260px;
+      width: 100%;
     }
 
     .project-card.featured .mockup-frame {
       border-bottom: none;
       border-right: 1px solid var(--border-subtle);
-      min-height: 360px;
+      height: 100%;
     }
 
     .mockup-chrome {
-      height: 34px;
+      height: 36px;
       padding: 0 14px;
-      background: rgba(255, 255, 255, 0.025);
+      background: rgba(255, 255, 255, 0.03);
       border-bottom: 1px solid var(--border-subtle);
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-shrink: 0;
     }
 
     .chrome-dots {
@@ -905,406 +815,51 @@
     }
 
     .chrome-dots span {
-      width: 8px;
-      height: 8px;
+      width: 9px;
+      height: 9px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.18);
     }
+
+    .chrome-dots span:nth-child(1) { background: rgba(239, 68, 68, 0.75); }
+    .chrome-dots span:nth-child(2) { background: rgba(245, 158, 11, 0.75); }
+    .chrome-dots span:nth-child(3) { background: rgba(16, 185, 129, 0.75); }
 
     .chrome-url {
       font-family: var(--font-mono);
       font-size: 0.7rem;
       color: var(--text-muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 72%;
     }
 
     .mockup-viewport {
-      flex: 1;
-      position: relative;
+      padding: 0;
       overflow: hidden;
+      aspect-ratio: 16 / 10;
+      width: 100%;
+      position: relative;
+      background: #0d1117;
+      flex: 1;
     }
 
-    .mockup-viewport img {
+    .project-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: top;
       display: block;
+      transition: transform 0.45s ease;
     }
 
-    /* --- MOCKUP 1: LOTOSMART (6 Loterias + Banner Motor Estatístico Pro) --- */
-    .mk-loto {
-      width: 100%;
-      height: 100%;
-      background: #f4f6fb;
-      display: grid;
-      grid-template-columns: 82px 1fr;
-      color: #0f172a;
-      font-family: var(--font-sans);
+    .project-card:hover .project-img {
+      transform: scale(1.04);
     }
 
-    .mk-loto-side {
-      background: #ffffff;
-      border-right: 1px solid #e2e8f0;
-      padding: 12px 9px;
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-    }
-
-    .mk-loto-brand {
-      font-size: 0.62rem;
-      font-weight: 800;
-      color: #fff;
-      background: linear-gradient(135deg, #4f46e5, #7c3aed);
-      padding: 5px 6px;
-      border-radius: 6px;
-      text-align: center;
-      margin-bottom: 4px;
-    }
-
-    .mk-loto-nav {
-      font-size: 0.54rem;
-      color: #64748b;
-      padding: 4px 6px;
-      border-radius: 5px;
-      font-weight: 600;
-    }
-
-    .mk-loto-nav.active {
-      background: #eef2ff;
-      color: #4338ca;
-    }
-
-    .mk-loto-main {
-      padding: 12px;
-      display: flex;
-      flex-direction: column;
-      gap: 9px;
-    }
-
-    .mk-loto-banner {
-      background: linear-gradient(135deg, #1b1742, #0f172a);
-      color: #fff;
-      border-radius: 9px;
-      padding: 10px 12px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-    }
-
-    .mk-loto-banner strong {
-      font-size: 0.68rem;
-      display: block;
-    }
-
-    .mk-loto-banner small {
-      font-size: 0.52rem;
-      color: #cbd5e1;
-    }
-
-    .mk-loto-pill {
-      font-family: var(--font-mono);
-      font-size: 0.52rem;
-      padding: 3px 7px;
-      border-radius: 99px;
-      background: rgba(129, 140, 248, 0.25);
-      color: #e0e7ff;
-      white-space: nowrap;
-    }
-
-    .mk-loto-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 7px;
-      flex: 1;
-    }
-
-    .mk-loto-card {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      padding: 7px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .mk-loto-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.58rem;
-      font-weight: 800;
-    }
-
-    .mk-balls {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2.5px;
-      margin: 4px 0;
-    }
-
-    .mk-balls i {
-      font-style: normal;
-      font-family: var(--font-mono);
-      font-size: 0.46rem;
-      font-weight: 700;
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-    }
-
-    .mk-prize {
-      font-size: 0.62rem;
-      font-weight: 800;
-      color: #0f172a;
-    }
-
-    .lt-purple .mk-loto-head { color: #9333ea; }
-    .lt-purple i { background: #f3e8ff; color: #7e22ce; }
-    .lt-green .mk-loto-head { color: #059669; }
-    .lt-green i { background: #d1fae5; color: #047857; }
-    .lt-blue .mk-loto-head { color: #2563eb; }
-    .lt-blue i { background: #dbeafe; color: #1d4ed8; }
-    .lt-amber .mk-loto-head { color: #d97706; }
-    .lt-amber i { background: #fef3c7; color: #b45309; }
-    .lt-rose .mk-loto-head { color: #e11d48; }
-    .lt-rose i { background: #ffe4e6; color: #be123c; }
-    .lt-indigo .mk-loto-head { color: #4f46e5; }
-    .lt-indigo i { background: #e0e7ff; color: #3730a3; }
-
-    /* --- MOCKUP 2: DRIVE PRO (Dark Dashboard KPIs + Odômetro + Gráfico) --- */
-    .mk-drive {
-      width: 100%;
-      height: 100%;
-      background: #070b14;
-      padding: 14px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      color: #f8fafc;
-    }
-
-    .mk-drive-kpis {
-      display: grid;
-      grid-template-columns: 1.25fr 1fr 1fr;
-      gap: 8px;
-    }
-
-    .mk-dkpi {
-      background: #0f172a;
-      border: 1px solid rgba(255, 255, 255, 0.07);
-      border-radius: 9px;
-      padding: 8px 10px;
-    }
-
-    .mk-dkpi small {
-      display: block;
-      font-family: var(--font-mono);
-      font-size: 0.5rem;
-      color: #94a3b8;
-      text-transform: uppercase;
-    }
-
-    .mk-dkpi strong {
-      font-size: 0.8rem;
-      font-weight: 800;
-      margin-top: 2px;
-      display: block;
-    }
-
-    .mk-dkpi strong.em { color: #10b981; }
-    .mk-dkpi strong.cy { color: #38bdf8; }
-    .mk-dkpi strong.am { color: #fbbf24; }
-
-    .mk-fuel-box {
-      background: #0f172a;
-      border: 1px solid rgba(16, 185, 129, 0.28);
-      border-radius: 9px;
-      padding: 9px 11px;
-    }
-
-    .mk-fuel-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-family: var(--font-mono);
-      font-size: 0.56rem;
-      color: #cbd5e1;
-      margin-bottom: 6px;
-    }
-
-    .mk-fuel-row b {
-      color: #34d399;
-    }
-
-    .mk-fuel-track {
-      height: 6px;
-      border-radius: 99px;
-      background: #1e293b;
-      overflow: hidden;
-    }
-
-    .mk-fuel-fill {
-      width: 86%;
-      height: 100%;
-      border-radius: 99px;
-      background: linear-gradient(90deg, #10b981, #22d3ee);
-    }
-
-    .mk-chart-box {
-      flex: 1;
-      background: #0f172a;
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: 9px;
-      padding: 9px 12px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 74px;
-    }
-
-    .mk-chart-title {
-      display: flex;
-      justify-content: space-between;
-      font-family: var(--font-mono);
-      font-size: 0.52rem;
-      color: #94a3b8;
-    }
-
-    .mk-bars {
-      display: flex;
-      align-items: flex-end;
-      gap: 6px;
-      height: 44px;
-      margin-top: 6px;
-    }
-
-    .mk-bar {
-      flex: 1;
-      border-radius: 3px 3px 0 0;
-      background: linear-gradient(180deg, #10b981, rgba(16, 185, 129, 0.35));
-    }
-
-    .mk-bar.exp {
-      background: linear-gradient(180deg, #f43f5e, rgba(244, 63, 94, 0.35));
-    }
-
-    /* --- MOCKUP 3: CHÁ RIFA ONLINE (INTERATIVO E CLICÁVEL!) --- */
-    .mk-rifa {
-      width: 100%;
-      height: 100%;
-      background-color: #fff5f8;
-      background-image: radial-gradient(#f9a8d4 0.8px, transparent 0.8px);
-      background-size: 11px 11px;
-      padding: 12px 14px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      color: #1f2937;
-    }
-
-    .mk-rifa-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-    }
-
-    .mk-rifa-title {
-      font-size: 0.86rem;
-      font-weight: 800;
-      color: #1f2937;
-    }
-
-    .mk-rifa-title span {
-      color: #db2777;
-    }
-
-    .mk-rifa-hint {
-      font-family: var(--font-mono);
-      font-size: 0.55rem;
-      padding: 2px 7px;
-      border-radius: 99px;
-      background: #fce7f3;
-      color: #be185d;
-      border: 1px solid #fbcfe8;
-    }
-
-    .mk-rifa-status {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      background: #ffffff;
-      border: 1px solid #fbcfe8;
-      border-radius: 8px;
-      padding: 6px 8px;
-      font-family: var(--font-mono);
-      font-size: 0.56rem;
-      justify-content: space-between;
-    }
-
-    .mk-st {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      font-weight: 600;
-    }
-
-    .mk-st i {
-      width: 7px;
-      height: 7px;
-      border-radius: 2px;
-      display: inline-block;
-    }
-
-    .mk-rifa-grid {
-      flex: 1;
-      background: #ffffff;
-      border: 1px solid #fbcfe8;
-      border-radius: 9px;
-      padding: 8px;
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 5px;
-      align-content: center;
-    }
-
-    .rifa-num-btn {
-      font-family: var(--font-mono);
-      font-size: 0.64rem;
-      font-weight: 700;
-      padding: 6px 0;
-      border-radius: 6px;
-      border: 1px solid #e5e7eb;
-      background: #ffffff;
-      color: #374151;
-      transition: all 0.16s ease;
-    }
-
-    .rifa-num-btn:hover {
-      border-color: #db2777;
-      transform: scale(1.06);
-    }
-
-    .rifa-num-btn.selected {
-      background: #fef3c7;
-      border-color: #f59e0b;
-      color: #92400e;
-    }
-
-    .rifa-num-btn.confirmed {
-      background: #d1fae5;
-      border-color: #10b981;
-      color: #065f46;
-      cursor: default;
-    }
-
-    /* Corpo do card de projeto */
+    /* Corpo de conteúdo do card */
     .project-body {
-      padding: 24px 26px;
+      padding: 26px;
       display: flex;
       flex-direction: column;
       flex: 1;
@@ -1316,6 +871,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 10px;
+      flex-wrap: wrap;
     }
 
     .project-category {
@@ -1348,7 +904,7 @@
 
     .project-desc {
       color: var(--text-secondary);
-      font-size: 0.9rem;
+      font-size: 0.91rem;
       flex: 1;
     }
 
@@ -1385,16 +941,16 @@
     }
 
     /* ==========================================================================
-       8. STACK TECNOLÓGICA (MARQUEE CONTÍNUO + ABAS INTERATIVAS)
+       7. HARD SKILLS & ECOSSISTEMA (MARQUEE + ABAS INTERATIVAS)
        ========================================================================== */
     .marquee-wrap {
       position: relative;
       overflow: hidden;
       padding: 16px 0;
-      margin-bottom: 36px;
+      margin-bottom: 34px;
       border-top: 1px solid var(--border-subtle);
       border-bottom: 1px solid var(--border-subtle);
-      background: rgba(13, 16, 23, 0.55);
+      background: rgba(12, 13, 18, 0.6);
       mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
       -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
     }
@@ -1490,6 +1046,24 @@
       margin-bottom: 18px;
     }
 
+    .pillar-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      color: var(--emerald-light);
+      flex-shrink: 0;
+    }
+
+    .pillar-icon.cyan {
+      background: rgba(6, 182, 212, 0.12);
+      border-color: rgba(6, 182, 212, 0.25);
+      color: var(--cyan-light);
+    }
+
     .stack-card-head h3 {
       font-size: 1.08rem;
       font-weight: 700;
@@ -1511,7 +1085,7 @@
       font-size: 0.78rem;
       padding: 7px 12px;
       border-radius: 8px;
-      background: rgba(7, 7, 9, 0.7);
+      background: rgba(7, 7, 9, 0.75);
       border: 1px solid var(--border-subtle);
       color: #e2e8f0;
       transition: all 0.2s ease;
@@ -1524,7 +1098,7 @@
     }
 
     /* ==========================================================================
-       9. TRAJETÓRIA PROFISSIONAL & FORMAÇÃO ACADÊMICA
+       8. EXPERIÊNCIA & FORMAÇÃO (LINHA DO TEMPO COMPLETA)
        ========================================================================== */
     .trajectory-layout {
       display: grid;
@@ -1603,7 +1177,31 @@
       color: var(--text-secondary);
     }
 
-    /* Bloco de Formação Acadêmica */
+    .tl-sublist {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--border-subtle);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      list-style: none;
+    }
+
+    .tl-sublist li {
+      font-size: 0.83rem;
+      color: var(--text-secondary);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tl-sublist li span {
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      color: var(--text-muted);
+    }
+
     .edu-column {
       display: flex;
       flex-direction: column;
@@ -1647,7 +1245,7 @@
     }
 
     /* ==========================================================================
-       10. SEÇÃO DE CONTATO COMPLETA & FORMULÁRIO INTERATIVO
+       9. CONTATO INTERATIVO & FORMULÁRIO RÁPIDO
        ========================================================================== */
     .contact-grid {
       display: grid;
@@ -1687,6 +1285,7 @@
       color: var(--emerald-light);
       display: grid;
       place-items: center;
+      flex-shrink: 0;
     }
 
     .c-icon.cy {
@@ -1716,7 +1315,6 @@
       gap: 5px;
     }
 
-    /* Formulário rápido */
     .contact-form-card {
       padding: 30px;
     }
@@ -1752,7 +1350,7 @@
       width: 100%;
       padding: 12px 14px;
       border-radius: var(--radius-sm);
-      background: rgba(7, 7, 9, 0.8);
+      background: rgba(7, 7, 9, 0.85);
       border: 1px solid var(--border-subtle);
       color: var(--text-primary);
       font-family: var(--font-sans);
@@ -1790,11 +1388,11 @@
     }
 
     /* ==========================================================================
-       11. RODAPÉ COMPLETO
+       10. RODAPÉ
        ========================================================================== */
     footer {
       border-top: 1px solid var(--border-subtle);
-      background: rgba(10, 12, 18, 0.8);
+      background: rgba(10, 11, 16, 0.85);
       padding: 40px 0;
     }
 
@@ -1846,12 +1444,12 @@
     }
 
     /* ==========================================================================
-       12. DRAWER LATERAL (CASE STUDY) & COMMAND PALETTE (⌘K) & TOAST
+       11. DRAWER LATERAL (CASE STUDY COM IMAGEM REAL) & COMMAND PALETTE & TOAST
        ========================================================================== */
     .drawer-backdrop {
       position: fixed;
       inset: 0;
-      background: rgba(3, 5, 10, 0.78);
+      background: rgba(3, 5, 10, 0.8);
       backdrop-filter: blur(8px);
       z-index: 200;
       opacity: 0;
@@ -1870,17 +1468,17 @@
       right: 0;
       bottom: 0;
       width: 100%;
-      max-width: 560px;
-      background: #0c0f16;
+      max-width: 580px;
+      background: #0c0d12;
       border-left: 1px solid var(--border-accent);
-      padding: 30px 28px;
+      padding: 28px;
       overflow-y: auto;
       transform: translateX(100%);
       transition: transform 0.34s var(--ease);
       display: flex;
       flex-direction: column;
       gap: 20px;
-      box-shadow: -20px 0 60px rgba(0, 0, 0, 0.7);
+      box-shadow: -20px 0 60px rgba(0, 0, 0, 0.72);
     }
 
     .drawer-backdrop.open .drawer-panel {
@@ -1891,7 +1489,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding-bottom: 16px;
+      padding-bottom: 14px;
       border-bottom: 1px solid var(--border-subtle);
     }
 
@@ -1919,8 +1517,26 @@
       color: #fb7185;
     }
 
+    .drawer-preview {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      background: #0d1117;
+      flex-shrink: 0;
+    }
+
+    .drawer-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+    }
+
     .drawer-title {
-      font-size: 1.55rem;
+      font-size: 1.5rem;
       font-weight: 800;
       letter-spacing: -0.03em;
       line-height: 1.2;
@@ -1974,7 +1590,7 @@
     .cmd-backdrop {
       position: fixed;
       inset: 0;
-      background: rgba(3, 5, 10, 0.78);
+      background: rgba(3, 5, 10, 0.8);
       backdrop-filter: blur(8px);
       z-index: 250;
       display: flex;
@@ -1994,7 +1610,7 @@
     .cmd-box {
       width: 100%;
       max-width: 520px;
-      background: #0d1017;
+      background: #0c0d12;
       border: 1px solid var(--border-strong);
       border-radius: var(--radius-md);
       overflow: hidden;
@@ -2063,7 +1679,7 @@
       position: fixed;
       bottom: 24px;
       right: 24px;
-      background: #0d1017;
+      background: #0c0d12;
       border: 1px solid rgba(16, 185, 129, 0.45);
       color: var(--text-primary);
       padding: 13px 18px;
@@ -2087,7 +1703,7 @@
     }
 
     /* ==========================================================================
-       13. ANIMAÇÕES REVEAL & RESPONSIVIDADE
+       12. ANIMAÇÃO REVEAL & RESPONSIVIDADE
        ========================================================================== */
     .reveal {
       opacity: 0;
@@ -2102,7 +1718,6 @@
 
     @media (max-width: 1024px) {
       .hero-grid,
-      .about-bento,
       .trajectory-layout,
       .contact-grid {
         grid-template-columns: 1fr;
@@ -2117,15 +1732,11 @@
       .project-card.featured .mockup-frame {
         border-right: none;
         border-bottom: 1px solid var(--border-subtle);
-        min-height: 280px;
+        height: auto;
       }
 
       .projects-grid {
         grid-template-columns: 1fr;
-      }
-
-      .metrics-strip {
-        grid-template-columns: repeat(2, 1fr);
       }
     }
 
@@ -2136,6 +1747,11 @@
 
       .hamburger {
         display: inline-flex;
+      }
+
+      .nav-cta,
+      .cmd-trigger span {
+        display: none;
       }
 
       .nav-links {
@@ -2165,7 +1781,7 @@
         padding: 12px 14px;
       }
 
-      .pillars-grid,
+      .metrics-strip,
       .stack-grid,
       .contact-cards,
       .form-buttons {
@@ -2175,31 +1791,7 @@
       .c-card.full {
         grid-column: span 1;
       }
-
-      .mk-loto {
-        grid-template-columns: 1fr;
-      }
-
-      .mk-loto-side {
-        display: none;
-      }
-
-      .mk-loto-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
     }
-    .project-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top;
-  display: block;
-  transition: transform 0.4s ease;
-}
-
-.project-card:hover .project-img {
-  transform: scale(1.04);
-}
   </style>
 </head>
 <body>
@@ -2212,19 +1804,17 @@
   <div class="ambient-orb orb-2" aria-hidden="true"></div>
 
   <!-- ======================================================================
-       1. NAVBAR FIXA
+       1. NAVEGAÇÃO SUPERIOR FIXA
        ====================================================================== -->
   <header class="navbar">
     <div class="container">
-      <a href="#inicio" class="brand" aria-label="Início">
+      <a href="#inicio" class="brand" aria-label="Voltar ao início">
         <span class="brand-dot" aria-hidden="true"></span>
         enock<span>.dev</span>
       </a>
 
       <nav aria-label="Navegação principal">
         <ul class="nav-links" id="navLinks">
-          <li><a href="#inicio" class="nav-link active">Início</a></li>
-          <li><a href="#sobre" class="nav-link">Sobre</a></li>
           <li><a href="#projetos" class="nav-link">Projetos</a></li>
           <li><a href="#stack" class="nav-link">Stack</a></li>
           <li><a href="#experiencia" class="nav-link">Experiência</a></li>
@@ -2234,9 +1824,11 @@
 
       <div class="nav-right">
         <button type="button" class="cmd-trigger" id="openCmdBtn" aria-label="Abrir Command Palette">
-          <span>Acesso rápido</span>
+          <span>Buscar</span>
           <kbd>⌘K</kbd>
         </button>
+
+        <a href="#contato" class="nav-cta">Falar comigo</a>
 
         <button type="button" class="hamburger" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
@@ -2251,77 +1843,70 @@
 
   <main>
     <!-- ====================================================================
-         2. HERO SECTION (CANVAS INTERATIVO + IDE/TERMINAL EXECUTÁVEL)
+         2. HERO DINÂMICO (CANVAS + TYPEWRITER + IDE INTERATIVA)
          ==================================================================== -->
     <section id="inicio" class="hero">
       <canvas id="heroCanvas" aria-hidden="true"></canvas>
 
       <div class="container">
         <div class="hero-grid">
-          <!-- Coluna Esquerda -->
           <div class="reveal">
             <div class="hero-badge">
               <span class="brand-dot" style="width: 8px; height: 8px;"></span>
-              Disponível para oportunidades Full Stack &amp; Back-end • Natal/RN
+              Disponível para oportunidades Full Stack • Natal/RN
             </div>
 
             <h1>Enock Marques</h1>
-
-            <div class="typing-wrapper" aria-live="polite">
-              <span class="typing-prefix">&gt;_</span>
-              <span id="typingText">Desenvolvedor Full Stack</span>
-              <span class="typing-cursor" aria-hidden="true"></span>
-            </div>
 
             <div class="hero-headline">
               Desenvolvedor Full Stack | Python (FastAPI, Flask) • JavaScript • SQL • Docker
             </div>
 
+            <div class="typing-wrapper" aria-live="polite">
+              <span class="typing-prefix">&gt;_</span>
+              <span id="typingText">Construindo sistemas escaláveis de ponta a ponta</span>
+              <span class="typing-cursor" aria-hidden="true"></span>
+            </div>
+
             <p class="hero-desc">
-              Desenvolvo sistemas web completos, APIs robustas e automações orientadas a dados para eliminar gargalos reais de negócio — unindo engenharia de software, análise lógica profunda e sólida vivência operacional.
+              Transformo desafios operacionais em sistemas web, APIs robustas e automações orientadas a dados — unindo análise lógica profunda, vivência corporativa em logística e engenharia de software.
             </p>
 
             <div class="hero-cta-row">
               <a href="#projetos" class="btn btn-primary">
-                Explorar Projetos
+                Ver Projetos
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
               </a>
 
-              <a href="https://wa.me/5584988711971" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                Falar no WhatsApp
+              <a href="https://github.com/Marquess12" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.82.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                GitHub
               </a>
 
-              <a href="https://github.com/Marquess12" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="GitHub">
-                <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.82.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-              </a>
-
-              <a href="https://www.linkedin.com/in/enock-marques-dev" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="LinkedIn">
-                <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+              <a href="https://www.linkedin.com/in/enock-marques-dev" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                LinkedIn
               </a>
             </div>
 
-            <!-- Métricas Animadas -->
+            <!-- Contadores Animados -->
             <div class="metrics-strip">
               <div class="metric-item">
                 <div class="metric-val"><span class="counter" data-target="3">0</span>+</div>
-                <div class="metric-label">Sistemas Próprios</div>
+                <div class="metric-label">Sistemas em Produção</div>
               </div>
               <div class="metric-item">
                 <div class="metric-val"><span class="counter" data-target="5">0</span>+</div>
                 <div class="metric-label">Anos de Vivência Corporativa</div>
               </div>
               <div class="metric-item">
-                <div class="metric-val"><span class="counter" data-target="9">0</span></div>
-                <div class="metric-label">Lojas Impactadas em Dados</div>
-              </div>
-              <div class="metric-item">
-                <div class="metric-val" style="color: var(--cyan-light);">100%</div>
-                <div class="metric-label">Full Stack &amp; DevOps</div>
+                <div class="metric-val" style="color: var(--cyan-light);"><span class="counter" data-target="15">0</span>+</div>
+                <div class="metric-label">Tecnologias no Ecossistema</div>
               </div>
             </div>
           </div>
 
-          <!-- Coluna Direita: Widget Interativo IDE / Terminal -->
+          <!-- Widget Interativo de IDE / Terminal -->
           <div class="ide-window reveal">
             <div class="ide-topbar">
               <div class="ide-dots">
@@ -2337,42 +1922,37 @@
             </div>
 
             <div class="ide-code-area">
-              <!-- Aba 1: profile.py -->
               <pre class="ide-code-pane active" id="tab-profile"><code><span class="sy-kw">class</span> <span class="sy-fn">EnockMarques</span>:
     <span class="sy-key">role</span> = <span class="sy-str">"Desenvolvedor Full Stack"</span>
     <span class="sy-key">location</span> = <span class="sy-str">"Natal, RN - Brasil"</span>
-    <span class="sy-key">focus</span> = [<span class="sy-str">"Sistemas Web"</span>, <span class="sy-str">"APIs REST"</span>, <span class="sy-str">"Dados &amp; IA"</span>]
+    <span class="sy-key">core</span> = [<span class="sy-str">"Python"</span>, <span class="sy-str">"FastAPI"</span>, <span class="sy-str">"Flask"</span>, <span class="sy-str">"JS"</span>, <span class="sy-str">"SQL"</span>, <span class="sy-str">"Docker"</span>]
 
-    <span class="sy-kw">def</span> <span class="sy-fn">solve_problem</span>(self, bottleneck: str) -&gt; dict:
-        <span class="sy-com"># Investigação lógica profunda antes de codar</span>
-        root_cause = self.analyze_root_cause(bottleneck)
+    <span class="sy-kw">def</span> <span class="sy-fn">solve</span>(self, bottleneck: str) -&gt; dict:
+        <span class="sy-com"># Investigação lógica antes de escrever código</span>
+        cause = self.find_root_cause(bottleneck)
         <span class="sy-kw">return</span> {
-            <span class="sy-str">"architecture"</span>: <span class="sy-str">"Clean &amp; Scalable"</span>,
+            <span class="sy-str">"architecture"</span>: <span class="sy-str">"Scalable &amp; Maintainable"</span>,
             <span class="sy-str">"rework"</span>: <span class="sy-num">0</span>,
-            <span class="sy-str">"ready_for_production"</span>: <span class="sy-kw">True</span>
+            <span class="sy-str">"production_ready"</span>: <span class="sy-kw">True</span>
         }</code></pre>
 
-              <!-- Aba 2: stack.json -->
               <pre class="ide-code-pane" id="tab-stack"><code>{
-  <span class="sy-key">"backend"</span>: [<span class="sy-str">"Python"</span>, <span class="sy-str">"FastAPI"</span>, <span class="sy-str">"Flask"</span>, <span class="sy-str">"Django"</span>, <span class="sy-str">"Java (learning)"</span>],
+  <span class="sy-key">"backend"</span>: [<span class="sy-str">"Python"</span>, <span class="sy-str">"FastAPI"</span>, <span class="sy-str">"Flask"</span>, <span class="sy-str">"Django"</span>, <span class="sy-str">"Java (em aprendizado)"</span>],
   <span class="sy-key">"frontend"</span>: [<span class="sy-str">"HTML5"</span>, <span class="sy-str">"CSS3"</span>, <span class="sy-str">"JavaScript"</span>, <span class="sy-str">"PWA"</span>, <span class="sy-str">"Flutter"</span>],
-  <span class="sy-key">"database"</span>: [<span class="sy-str">"PostgreSQL"</span>, <span class="sy-str">"MySQL"</span>, <span class="sy-str">"SQL Server"</span>, <span class="sy-str">"Supabase"</span>],
-  <span class="sy-key">"ai_and_rag"</span>: [<span class="sy-str">"LangChain"</span>, <span class="sy-str">"LLMs"</span>, <span class="sy-str">"RAG Pipelines"</span>],
-  <span class="sy-key">"devops"</span>: [<span class="sy-str">"Docker"</span>, <span class="sy-str">"Linux"</span>, <span class="sy-str">"GitHub Actions"</span>]
+  <span class="sy-key">"data_ai"</span>: [<span class="sy-str">"PostgreSQL"</span>, <span class="sy-str">"MySQL"</span>, <span class="sy-str">"SQL Server"</span>, <span class="sy-str">"RAG"</span>, <span class="sy-str">"LangChain"</span>],
+  <span class="sy-key">"devops"</span>: [<span class="sy-str">"Docker"</span>, <span class="sy-str">"Docker Compose"</span>, <span class="sy-str">"Linux"</span>, <span class="sy-str">"GitHub Actions"</span>]
 }</code></pre>
 
-              <!-- Aba 3: deploy.sh -->
               <pre class="ide-code-pane" id="tab-deploy"><code><span class="sy-com">#!/bin/bash</span>
-<span class="sy-com"># Pipeline de produção — Projetos Enock Marques</span>
+<span class="sy-com"># Deploy automatizado — Ecossistema Enock Marques</span>
 <span class="sy-fn">docker</span> compose -f docker-compose.prod.yml pull
 <span class="sy-fn">docker</span> compose up -d --build --remove-orphans
 
 <span class="sy-kw">echo</span> <span class="sy-str">"✓ LotoSmart API .... [ONLINE - 200 OK]"</span>
 <span class="sy-kw">echo</span> <span class="sy-str">"✓ Drive Pro PWA .... [READY - MySQL OK]"</span>
-<span class="sy-kw">echo</span> <span class="sy-str">"✓ Cha Rifa Engine .. [READY - PIX/WA OK]"</span></code></pre>
+<span class="sy-kw">echo</span> <span class="sy-str">"✓ Cha Rifa Web ..... [READY - PIX/WA OK]"</span></code></pre>
             </div>
 
-            <!-- Terminal Executável -->
             <div class="ide-terminal">
               <div class="ide-terminal-head">
                 <span class="ide-terminal-title">Terminal • health-check</span>
@@ -2390,98 +1970,29 @@
     </section>
 
     <!-- ====================================================================
-         3. SOBRE & DIFERENCIAIS (BENTO GRID RICO)
-         ==================================================================== -->
-    <section id="sobre">
-      <div class="container">
-        <div class="section-header reveal">
-          <div>
-            <span class="section-kicker">01 • Perfil &amp; Engenharia</span>
-            <h2 class="section-title">Sobre mim &amp; <span>Diferenciais</span></h2>
-          </div>
-        </div>
-
-        <div class="about-bento">
-          <div class="spotlight-card about-bio-card reveal">
-            <div>
-              <h3>Mentalidade analítica aplicada ao código de produção</h3>
-              <p style="margin-top: 14px;">
-                Sou um desenvolvedor Full Stack em transição consolidada para a engenharia de software, trazendo mais de 5 anos de vivência corporativa em logística, análise de dados e coordenação de projetos.
-              </p>
-              <p style="margin-top: 12px;">
-                Atualmente expando meu stack para o ecossistema Back-end corporativo com <strong>Java</strong>, somando-se à experiência prática em <strong>Python (FastAPI, Flask, Django)</strong>, <strong>JavaScript</strong>, bancos relacionais e containers. Minha abordagem é investigativa: entendo a causa raiz do gargalo operacional antes de escrever a primeira linha, garantindo entregas assertivas e sem retrabalho.
-              </p>
-            </div>
-
-            <div class="bio-highlights">
-              <span class="bio-chip">Análise de Causa Raiz</span>
-              <span class="bio-chip">Liderança Técnica</span>
-              <span class="bio-chip">Dados &amp; KPIs</span>
-              <span class="bio-chip">Self-Hosting Linux/Docker</span>
-            </div>
-          </div>
-
-          <div class="pillars-grid">
-            <div class="spotlight-card pillar-card reveal">
-              <div class="pillar-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-              </div>
-              <h4>Análise Lógica &amp; Raiz</h4>
-              <p>Investigação técnica profunda para mitigar conclusões precipitadas e evitar retrabalho em produção.</p>
-            </div>
-
-            <div class="spotlight-card pillar-card reveal">
-              <div class="pillar-icon cyan">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
-              </div>
-              <h4>Visão de Negócio &amp; Dados</h4>
-              <p>Experiência real com KPIs de diretoria, auditorias financeiras em SQL/Python e logística de rede.</p>
-            </div>
-
-            <div class="spotlight-card pillar-card reveal">
-              <div class="pillar-icon cyan">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-              </div>
-              <h4>Full Stack Ponta a Ponta</h4>
-              <p>Da modelagem do banco e APIs REST em Python até interfaces web responsivas e PWAs instaláveis.</p>
-            </div>
-
-            <div class="spotlight-card pillar-card reveal">
-              <div class="pillar-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="7" rx="2"/><rect x="2" y="14" width="20" height="7" rx="2"/><line x1="6" y1="6.5" x2="6.01" y2="6.5"/><line x1="6" y1="17.5" x2="6.01" y2="17.5"/></svg>
-              </div>
-              <h4>Infra &amp; Self-Hosting</h4>
-              <p>Ambientes padronizados com Docker, Docker Compose, administração Linux e pipelines CI/CD.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ====================================================================
-         4. PROJETOS EM DESTAQUE (FILTROS + MOCKUPS INTERATIVOS + DRAWER)
+         3. PROJETOS EM DESTAQUE (COM AS IMAGENS REAIS DE assets/)
          ==================================================================== -->
     <section id="projetos">
       <div class="container">
         <div class="section-header reveal">
           <div>
-            <span class="section-kicker">02 • Portfólio Real</span>
+            <span class="section-kicker">01 • Portfólio Real</span>
             <h2 class="section-title">Projetos em <span>Destaque</span></h2>
             <p class="section-desc">
-              Sistemas reais construídos do zero. Teste a grade interativa no Chá Rifa ou clique em "Detalhes Técnicos" para abrir o estudo de caso completo.
+              Sistemas desenvolvidos de ponta a ponta para resolver dores reais. Clique em "Ver Case Study" para abrir a arquitetura completa.
             </p>
           </div>
 
           <div class="filter-pills" role="tablist" aria-label="Filtrar projetos">
             <button type="button" class="filter-btn active" data-filter="all">Todos</button>
             <button type="button" class="filter-btn" data-filter="fullstack">Full Stack</button>
-            <button type="button" class="filter-btn" data-filter="analytics">Analytics &amp; Dados</button>
-            <button type="button" class="filter-btn" data-filter="pwa">PWA / Web</button>
+            <button type="button" class="filter-btn" data-filter="analytics">Analytics/Dados</button>
+            <button type="button" class="filter-btn" data-filter="pwa">PWA/Web</button>
           </div>
         </div>
 
         <div class="projects-grid">
-          <!-- PROJETO 1: LOTOSMART (FEATURED) -->
+          <!-- PROJETO 1: LOTOSMART (DESTAQUE) -->
           <article class="spotlight-card project-card featured reveal" data-categories="fullstack analytics pwa">
             <div class="mockup-frame">
               <div class="mockup-chrome">
@@ -2489,87 +2000,39 @@
                 <span class="chrome-url">http://lotosmart.online/</span>
               </div>
               <div class="mockup-viewport">
-                <img src="assets/lotosmart.jpg" alt="LotoSmart Dashboard" class="project-img" />
-          </div>
-                <!-- SUBSTITUIR PELO PRINT REAL: <img src="assets/lotosmart.jpg" alt="LotoSmart Dashboard" /> -->
-                <!-- <div class="mk-loto" aria-hidden="true">
-                  <div class="mk-loto-side">
-                    <div class="mk-loto-brand">LotoSmart</div>
-                    <div class="mk-loto-nav active">Início</div>
-                    <div class="mk-loto-nav">Resultados</div>
-                    <div class="mk-loto-nav">Gerador IA</div>
-                    <div class="mk-loto-nav">Estatísticas</div>
-                    <div class="mk-loto-nav">Fechamentos</div>
-                    <div class="mk-loto-nav">Conferência</div>
-                  </div> -->
-                  <div class="mk-loto-main">
-                    <div class="mk-loto-banner">
-                      <div>
-                        <strong>Aposte com Estratégia Matemática</strong>
-                        <small>Big Data da Caixa, ciclos de dezenas e matrizes</small>
-                      </div>
-                      <span class="mk-loto-pill">MOTOR ESTATÍSTICO PRO</span>
-                    </div>
-                    <div class="mk-loto-grid">
-                      <div class="mk-loto-card lt-purple">
-                        <div class="mk-loto-head"><span>Lotofácil</span></div>
-                        <div class="mk-balls"><i>01</i><i>02</i><i>05</i><i>07</i><i>10</i><i>15</i></div>
-                        <div class="mk-prize">R$ 2 Mi</div>
-                      </div>
-                      <div class="mk-loto-card lt-green">
-                        <div class="mk-loto-head"><span>Mega-Sena</span></div>
-                        <div class="mk-balls"><i>10</i><i>14</i><i>27</i><i>28</i><i>47</i><i>57</i></div>
-                        <div class="mk-prize">R$ 75 Mi</div>
-                      </div>
-                      <div class="mk-loto-card lt-blue">
-                        <div class="mk-loto-head"><span>Quina</span></div>
-                        <div class="mk-balls"><i>04</i><i>11</i><i>40</i><i>45</i><i>48</i></div>
-                        <div class="mk-prize">R$ 50 Mi</div>
-                      </div>
-                      <div class="mk-loto-card lt-amber">
-                        <div class="mk-loto-head"><span>Lotomania</span></div>
-                        <div class="mk-balls"><i>15</i><i>16</i><i>20</i><i>28</i><i>35</i><i>51</i></div>
-                        <div class="mk-prize">R$ 3,4 Mi</div>
-                      </div>
-                      <div class="mk-loto-card lt-rose">
-                        <div class="mk-loto-head"><span>Dupla Sena</span></div>
-                        <div class="mk-balls"><i>03</i><i>10</i><i>13</i><i>28</i><i>40</i><i>43</i></div>
-                        <div class="mk-prize">R$ 15,7 Mi</div>
-                      </div>
-                      <div class="mk-loto-card lt-indigo">
-                        <div class="mk-loto-head"><span>+Milionária</span></div>
-                        <div class="mk-balls"><i>07</i><i>10</i><i>17</i><i>19</i><i>24</i><i>39</i></div>
-                        <div class="mk-prize">R$ 119 Mi</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <img
+                  src="assets/lotosmart.jpg"
+                  alt="Painel do sistema LotoSmart"
+                  class="project-img"
+                  loading="lazy"
+                  onerror="this.onerror=null; this.src='https://placehold.co/960x600/0d1117/10b981?text=LotoSmart+Dashboard';"
+                />
               </div>
             </div>
 
             <div class="project-body">
               <div class="project-top-row">
                 <span class="project-category">Analytics &amp; Motor Estatístico</span>
-                <span class="live-badge">● Em Produção</span>
+                <span class="live-badge">● Online</span>
               </div>
-              <h3 class="project-title">LotoSmart — Análise Estatística de Loterias</h3>
+              <h3 class="project-title">LotoSmart — Inteligência Lotérica</h3>
               <p class="project-desc">
-                Plataforma completa de inteligência lotérica cobrindo as 6 principais modalidades da Caixa. Combina sincronização automática de sorteios oficiais, análise de ciclos de dezenas, mapas térmicos, fechamentos matemáticos e conferência instantânea.
+                Sistema multiplataforma (PWA/Web) de análise estatística, ciclos de dezenas e geração inteligente de apostas para as 6 principais loterias da Caixa (+Milionária, Mega-Sena, Lotofácil, Quina, Lotomania e Dupla Sena).
               </p>
               <div class="tech-tags">
                 <span class="tech-tag">Python</span>
                 <span class="tech-tag">FastAPI</span>
-                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">HTML/CSS/JS</span>
                 <span class="tech-tag">PWA</span>
                 <span class="tech-tag">MySQL</span>
                 <span class="tech-tag">Docker</span>
               </div>
               <div class="project-actions">
                 <a href="http://lotosmart.online/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                  Acessar Sistema ↗
+                  Acessar sistema ↗
                 </a>
                 <button type="button" class="btn btn-secondary" onclick="openCaseDrawer('lotosmart')">
-                  Detalhes Técnicos
+                  Ver Case Study
                 </button>
               </div>
             </div>
@@ -2580,51 +2043,16 @@
             <div class="mockup-frame">
               <div class="mockup-chrome">
                 <div class="chrome-dots"><span></span><span></span><span></span></div>
-                <span class="chrome-url">drivepro.app • Visão Geral</span>
+                <span class="chrome-url">drivepro.app • Dashboard Financeiro</span>
               </div>
               <div class="mockup-viewport">
-                <!-- SUBSTITUIR PELO PRINT REAL: <img src="assets/drivepro.jpg" alt="Drive Pro Dashboard" /> -->
-                <div class="mk-drive" aria-hidden="true">
-                  <div class="mk-drive-kpis">
-                    <div class="mk-dkpi">
-                      <small>Lucro Líquido</small>
-                      <strong class="em">R$ 783,66</strong>
-                    </div>
-                    <div class="mk-dkpi">
-                      <small>Ganho / Hora</small>
-                      <strong class="cy">R$ 18,23/h</strong>
-                    </div>
-                    <div class="mk-dkpi">
-                      <small>Custo / KM</small>
-                      <strong class="am">R$ 0,31/km</strong>
-                    </div>
-                  </div>
-
-                  <div class="mk-fuel-box">
-                    <div class="mk-fuel-row">
-                      <span>Autonomia &amp; Odômetro • 26,37 km/L real</span>
-                      <b>~256 km (100%)</b>
-                    </div>
-                    <div class="mk-fuel-track"><div class="mk-fuel-fill"></div></div>
-                  </div>
-
-                  <div class="mk-chart-box">
-                    <div class="mk-chart-title">
-                      <span>Receitas vs Despesas</span>
-                      <span style="color: #34d399;">DRE Mensal</span>
-                    </div>
-                    <div class="mk-bars">
-                      <div class="mk-bar" style="height: 55%;"></div>
-                      <div class="mk-bar exp" style="height: 28%;"></div>
-                      <div class="mk-bar" style="height: 82%;"></div>
-                      <div class="mk-bar exp" style="height: 24%;"></div>
-                      <div class="mk-bar" style="height: 68%;"></div>
-                      <div class="mk-bar" style="height: 95%;"></div>
-                      <div class="mk-bar exp" style="height: 36%;"></div>
-                      <div class="mk-bar" style="height: 76%;"></div>
-                    </div>
-                  </div>
-                </div>
+                <img
+                  src="assets/drive_pro.jpg"
+                  alt="Dashboard financeiro Drive Pro"
+                  class="project-img"
+                  loading="lazy"
+                  onerror="this.onerror=null; this.src='https://placehold.co/800x500/0d1117/06b6d4?text=Drive+Pro+Dashboard';"
+                />
               </div>
             </div>
 
@@ -2634,49 +2062,38 @@
               </div>
               <h3 class="project-title">Drive Pro — Gestão para Motoristas</h3>
               <p class="project-desc">
-                Aplicação PWA para administrar ganhos, despesas e metas de motoristas de app. Entrega DRE automático, lucro líquido operacional, ganho/hora, custo/km e auditoria de abastecimento e odômetro.
+                Sistema de gestão financeira, controle de turnos, autonomia de combustível, odômetro e metas de faturamento para motoristas de aplicativo e entregadores.
               </p>
               <div class="tech-tags">
                 <span class="tech-tag">Python</span>
-                <span class="tech-tag">Flask/FastAPI</span>
-                <span class="tech-tag">HTML/CSS/JS</span>
-                <span class="tech-tag">PWA</span>
+                <span class="tech-tag">Flask</span>
+                <span class="tech-tag">JavaScript</span>
                 <span class="tech-tag">MySQL</span>
-                <span class="tech-tag">Docker</span>
+                <span class="tech-tag">PWA</span>
               </div>
               <div class="project-actions">
                 <button type="button" class="btn btn-primary" onclick="openCaseDrawer('drivepro')">
-                  Detalhes Técnicos
+                  Ver Case Study
                 </button>
               </div>
             </div>
           </article>
 
-          <!-- PROJETO 3: CHÁ RIFA ONLINE (COM MINI GRADE CLICÁVEL!) -->
+          <!-- PROJETO 3: CHÁ RIFA ONLINE -->
           <article class="spotlight-card project-card reveal" data-categories="fullstack pwa">
             <div class="mockup-frame">
               <div class="mockup-chrome">
                 <div class="chrome-dots"><span></span><span></span><span></span></div>
-                <span class="chrome-url">charifa.online • Demo Interativa</span>
+                <span class="chrome-url">charifa.online • Rifa Digital</span>
               </div>
               <div class="mockup-viewport">
-                <!-- SUBSTITUIR PELO PRINT REAL: <img src="assets/charifa.png" alt="Chá Rifa Online" /> -->
-                <div class="mk-rifa">
-                  <div class="mk-rifa-header">
-                    <div class="mk-rifa-title">Chá Rifa da <span>Celina</span></div>
-                    <span class="mk-rifa-hint">Clique nos números para testar!</span>
-                  </div>
-
-                  <div class="mk-rifa-status">
-                    <span class="mk-st"><i style="background:#e5e7eb; border:1px solid #9ca3af;"></i> Disponível (<b id="rifaFreeCount">12</b>)</span>
-                    <span class="mk-st"><i style="background:#f59e0b;"></i> Aguardando (<b id="rifaWaitCount">2</b>)</span>
-                    <span class="mk-st"><i style="background:#10b981;"></i> Confirmado (<b id="rifaDoneCount">4</b>)</span>
-                  </div>
-
-                  <div class="mk-rifa-grid" id="rifaMiniGrid" aria-label="Grade demonstrativa interativa de números">
-                    <!-- Populado via JS para permitir seleção ao vivo -->
-                  </div>
-                </div>
+                <img
+                  src="assets/cha_rifa.png"
+                  alt="Interface do sistema Chá Rifa Online"
+                  class="project-img"
+                  loading="lazy"
+                  onerror="this.onerror=null; this.src='https://placehold.co/800x500/0d1117/f472b6?text=Cha+Rifa+Online';"
+                />
               </div>
             </div>
 
@@ -2684,20 +2101,20 @@
               <div class="project-top-row">
                 <span class="project-category">Web App Interativo</span>
               </div>
-              <h3 class="project-title">Chá Rifa Online — Gestão de Rifas</h3>
+              <h3 class="project-title">Chá Rifa Online</h3>
               <p class="project-desc">
-                Plataforma web responsiva para organização de chás rifas digitais com seleção de números em tempo real, filtros por status, vitrine de prêmios e fluxo automatizado de reserva via PIX e WhatsApp.
+                Plataforma web interativa para organização de chás rifa online, com seleção dinâmica de números em tempo real, controle de status (disponível, aguardando, confirmado), filtros e integração direta com WhatsApp e PIX.
               </p>
               <div class="tech-tags">
                 <span class="tech-tag">Python</span>
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
                 <span class="tech-tag">JavaScript</span>
-                <span class="tech-tag">HTML5/CSS3</span>
                 <span class="tech-tag">SQL</span>
-                <span class="tech-tag">PIX &amp; WhatsApp</span>
               </div>
               <div class="project-actions">
                 <button type="button" class="btn btn-primary" onclick="openCaseDrawer('charifa')">
-                  Detalhes Técnicos
+                  Ver Case Study
                 </button>
               </div>
             </div>
@@ -2707,16 +2124,16 @@
     </section>
 
     <!-- ====================================================================
-         5. STACK TECNOLÓGICA & ECOSSISTEMA (MARQUEE + ABAS)
+         4. HARD SKILLS & ECOSSISTEMA (MARQUEE + ABAS INTERATIVAS)
          ==================================================================== -->
     <section id="stack">
       <div class="container">
         <div class="section-header reveal">
           <div>
-            <span class="section-kicker">03 • Ecossistema</span>
-            <h2 class="section-title">Stack Tecnológica &amp; <span>Hard Skills</span></h2>
+            <span class="section-kicker">02 • Ecossistema Técnico</span>
+            <h2 class="section-title">Hard Skills &amp; <span>Stack</span></h2>
             <p class="section-desc">
-              Tecnologias aplicadas em produção, dados, automação e infraestrutura de servidores.
+              Tecnologias que utilizo no dia a dia para desenvolver APIs, interfaces web responsivas, bancos de dados e infraestrutura containerizada.
             </p>
           </div>
         </div>
@@ -2729,38 +2146,40 @@
             <span class="marquee-badge"><span></span>Flask</span>
             <span class="marquee-badge cy"><span></span>Django</span>
             <span class="marquee-badge"><span></span>Java</span>
-            <span class="marquee-badge cy"><span></span>JavaScript ES6+</span>
+            <span class="marquee-badge cy"><span></span>JavaScript</span>
             <span class="marquee-badge"><span></span>HTML5 &amp; CSS3</span>
             <span class="marquee-badge cy"><span></span>PWA &amp; Flutter</span>
             <span class="marquee-badge"><span></span>PostgreSQL</span>
             <span class="marquee-badge cy"><span></span>MySQL &amp; SQL Server</span>
-            <span class="marquee-badge"><span></span>Docker &amp; Compose</span>
+            <span class="marquee-badge"><span></span>Supabase</span>
             <span class="marquee-badge cy"><span></span>RAG &amp; LangChain</span>
-            <span class="marquee-badge"><span></span>Linux &amp; CI/CD</span>
-            <!-- Duplicação para loop infinito suave -->
+            <span class="marquee-badge"><span></span>Docker &amp; Compose</span>
+            <span class="marquee-badge cy"><span></span>Linux &amp; CI/CD</span>
+            <!-- Loop contínuo -->
             <span class="marquee-badge"><span></span>Python</span>
             <span class="marquee-badge cy"><span></span>FastAPI</span>
             <span class="marquee-badge"><span></span>Flask</span>
             <span class="marquee-badge cy"><span></span>Django</span>
             <span class="marquee-badge"><span></span>Java</span>
-            <span class="marquee-badge cy"><span></span>JavaScript ES6+</span>
+            <span class="marquee-badge cy"><span></span>JavaScript</span>
             <span class="marquee-badge"><span></span>HTML5 &amp; CSS3</span>
             <span class="marquee-badge cy"><span></span>PWA &amp; Flutter</span>
             <span class="marquee-badge"><span></span>PostgreSQL</span>
             <span class="marquee-badge cy"><span></span>MySQL &amp; SQL Server</span>
-            <span class="marquee-badge"><span></span>Docker &amp; Compose</span>
+            <span class="marquee-badge"><span></span>Supabase</span>
             <span class="marquee-badge cy"><span></span>RAG &amp; LangChain</span>
-            <span class="marquee-badge"><span></span>Linux &amp; CI/CD</span>
+            <span class="marquee-badge"><span></span>Docker &amp; Compose</span>
+            <span class="marquee-badge cy"><span></span>Linux &amp; CI/CD</span>
           </div>
         </div>
 
-        <!-- Abas Interativas de Stack -->
+        <!-- Abas Interativas -->
         <div class="stack-tabs reveal" role="tablist">
-          <button type="button" class="stack-tab-btn active" data-stack="all">Todas as Camadas</button>
+          <button type="button" class="stack-tab-btn active" data-stack="all">Todas</button>
           <button type="button" class="stack-tab-btn" data-stack="backend">Back-end</button>
           <button type="button" class="stack-tab-btn" data-stack="frontend">Front-end &amp; Mobile</button>
-          <button type="button" class="stack-tab-btn" data-stack="data">Dados &amp; IA Generativa</button>
-          <button type="button" class="stack-tab-btn" data-stack="devops">DevOps &amp; Infra</button>
+          <button type="button" class="stack-tab-btn" data-stack="data">Dados &amp; IA</button>
+          <button type="button" class="stack-tab-btn" data-stack="devops">Infra &amp; DevOps</button>
         </div>
 
         <div class="stack-grid">
@@ -2770,8 +2189,8 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="7" rx="2"/><rect x="2" y="14" width="20" height="7" rx="2"/></svg>
               </div>
               <div>
-                <h3>Back-end &amp; Arquitetura</h3>
-                <p>APIs rápidas, regras de negócio e código sustentável</p>
+                <h3>Back-end</h3>
+                <p>APIs RESTful, regras de negócio e código escalável</p>
               </div>
             </div>
             <div class="skill-pills">
@@ -2782,7 +2201,6 @@
               <span class="skill-pill">Java (em aprendizado)</span>
               <span class="skill-pill">APIs RESTful</span>
               <span class="skill-pill">POO</span>
-              <span class="skill-pill">Design Patterns</span>
             </div>
           </div>
 
@@ -2793,15 +2211,15 @@
               </div>
               <div>
                 <h3>Front-end &amp; Mobile</h3>
-                <p>Experiência fluida em desktop e dispositivos móveis</p>
+                <p>Interfaces responsivas, leves e instaláveis</p>
               </div>
             </div>
             <div class="skill-pills">
               <span class="skill-pill">HTML5</span>
               <span class="skill-pill">CSS3</span>
-              <span class="skill-pill">JavaScript (ES6+)</span>
-              <span class="skill-pill">PWA</span>
+              <span class="skill-pill">JavaScript</span>
               <span class="skill-pill">Flutter</span>
+              <span class="skill-pill">PWA</span>
             </div>
           </div>
 
@@ -2811,8 +2229,8 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
               </div>
               <div>
-                <h3>Dados &amp; IA Generativa</h3>
-                <p>Bancos relacionais, auditoria e orquestração de LLMs</p>
+                <h3>Dados &amp; IA</h3>
+                <p>Modelagem relacional, auditoria e IA Generativa</p>
               </div>
             </div>
             <div class="skill-pills">
@@ -2820,9 +2238,9 @@
               <span class="skill-pill">MySQL</span>
               <span class="skill-pill">SQL Server</span>
               <span class="skill-pill">Supabase</span>
-              <span class="skill-pill">Arquiteturas RAG</span>
+              <span class="skill-pill">RAG</span>
               <span class="skill-pill">LangChain</span>
-              <span class="skill-pill">Orquestração de LLMs</span>
+              <span class="skill-pill">LLMs</span>
             </div>
           </div>
 
@@ -2832,8 +2250,8 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
               </div>
               <div>
-                <h3>DevOps &amp; Infraestrutura</h3>
-                <p>Deploy contínuo, containers e administração de servidores</p>
+                <h3>Infra &amp; DevOps</h3>
+                <p>Containers, servidores Linux e automação de deploy</p>
               </div>
             </div>
             <div class="skill-pills">
@@ -2841,8 +2259,8 @@
               <span class="skill-pill">Docker Compose</span>
               <span class="skill-pill">Linux</span>
               <span class="skill-pill">Gestão de Servidores</span>
-              <span class="skill-pill">Git &amp; GitHub</span>
-              <span class="skill-pill">CI/CD (GitHub Actions)</span>
+              <span class="skill-pill">Git</span>
+              <span class="skill-pill">GitHub Actions CI/CD</span>
             </div>
           </div>
         </div>
@@ -2850,60 +2268,57 @@
     </section>
 
     <!-- ====================================================================
-         6. TRAJETÓRIA PROFISSIONAL & FORMAÇÃO ACADÊMICA
+         5. EXPERIÊNCIA & FORMAÇÃO (LINHA DO TEMPO COMPLETA)
          ==================================================================== -->
     <section id="experiencia">
       <div class="container">
         <div class="section-header reveal">
           <div>
-            <span class="section-kicker">04 • Carreira</span>
-            <h2 class="section-title">Trajetória &amp; <span>Formação</span></h2>
+            <span class="section-kicker">03 • Carreira</span>
+            <h2 class="section-title">Experiência &amp; <span>Formação</span></h2>
             <p class="section-desc">
-              Evolução consistente de operações logísticas e análise de dados até liderança de projetos e engenharia Full Stack.
+              Sólida trajetória corporativa unindo logística, análise de dados, liderança de projetos e desenvolvimento de sistemas.
             </p>
           </div>
         </div>
 
         <div class="trajectory-layout">
-          <!-- Timeline Profissional -->
           <div class="timeline reveal">
+            <!-- Interfort -->
             <article class="spotlight-card timeline-card">
               <span class="timeline-node" aria-hidden="true"></span>
-              <span class="tl-period">Out/2025 – Abr/2026</span>
+              <span class="tl-period">OUT/2025 – ABR/2026</span>
               <h3 class="tl-role">Coordenador de Projetos e Inovação</h3>
               <p class="tl-company">Interfort — Segurança Privada</p>
               <p class="tl-desc">
-                Liderança da equipe de desenvolvimento e auditoria, conduzindo investigações de fluxos para eliminar gargalos operacionais através de sistemas internos desenvolvidos em Python, Flask, HTML, CSS e JavaScript.
+                Liderança da equipe de desenvolvimento e auditoria, conduzindo automações e melhorias tecnológicas nos processos internos com Python, Flask, HTML, CSS e JavaScript para eliminar gargalos operacionais.
               </p>
             </article>
 
+            <!-- Sacolão.com -->
             <article class="spotlight-card timeline-card">
               <span class="timeline-node" aria-hidden="true"></span>
-              <span class="tl-period">Dez/2024 – Out/2025</span>
+              <span class="tl-period">DEZ/2024 – OUT/2025</span>
               <h3 class="tl-role">Analista de Dados Jr</h3>
               <p class="tl-company">Sacolão.com — Varejo</p>
               <p class="tl-desc">
-                Planejamento logístico e abastecimento de 9 lojas da rede, criação de dashboards e KPIs comerciais para diretoria e auditorias financeiras automatizadas com Python e consultas SQL.
+                Planejamento logístico e abastecimento estratégico de 9 lojas da rede, criação de dashboards de KPIs comerciais para diretoria e auditorias financeiras de premiações e comissões com Python e SQL.
               </p>
+              <ul class="tl-sublist">
+                <li><strong>Assistente Administrativo (Compras &amp; ERP)</strong><span>AGO/2023 – DEZ/2024</span></li>
+                <li><strong>Auxiliar Logístico (Operação E-commerce)</strong><span>FEV/2022 – JUL/2023</span></li>
+                <li><strong>Jovem Aprendiz (Rotinas Logísticas)</strong><span>MAR/2021 – FEV/2022</span></li>
+              </ul>
             </article>
 
+            <!-- Rede Mais -->
             <article class="spotlight-card timeline-card">
               <span class="timeline-node" aria-hidden="true"></span>
-              <span class="tl-period">Ago/2023 – Dez/2024</span>
-              <h3 class="tl-role">Assistente Administrativo</h3>
-              <p class="tl-company">Sacolão.com — Varejo</p>
+              <span class="tl-period">OUT/2018 – FEV/2020</span>
+              <h3 class="tl-role">Jovem Aprendiz</h3>
+              <p class="tl-company">Rede Mais Supermercados</p>
               <p class="tl-desc">
-                Atuação estratégica no setor de compras, geração de relatórios gerenciais e controle rigoroso de entrada de notas fiscais e pedidos no sistema ERP.
-              </p>
-            </article>
-
-            <article class="spotlight-card timeline-card">
-              <span class="timeline-node" aria-hidden="true"></span>
-              <span class="tl-period">2018 – 2023</span>
-              <h3 class="tl-role">Auxiliar Logístico &amp; Jovem Aprendiz</h3>
-              <p class="tl-company">Sacolão.com &amp; Rede Mais Supermercados</p>
-              <p class="tl-desc">
-                Operação de E-commerce com otimização de fluxos de separação, embalamento e despacho para transportadoras, além de controle de validade e rotinas operacionais logísticas.
+                Responsável pelo controle rigoroso de validade de produtos e reposição estratégica de mercadorias no salão de vendas.
               </p>
             </article>
           </div>
@@ -2915,13 +2330,13 @@
             <div class="spotlight-card edu-card">
               <span class="edu-status">2026 – 2028 • Cursando</span>
               <h4>Análise e Desenvolvimento de Sistemas</h4>
-              <p>UniCesumar — Graduação Tecnológica</p>
+              <p>UniCesumar</p>
             </div>
 
             <div class="spotlight-card edu-card">
               <span class="edu-status">2024 – 2025 • Concluído</span>
               <h4>Técnico em Desenvolvimento de Sistemas</h4>
-              <p>UniCesumar — Formação Técnica</p>
+              <p>UniCesumar</p>
             </div>
 
             <div class="spotlight-card edu-card">
@@ -2935,13 +2350,13 @@
     </section>
 
     <!-- ====================================================================
-         7. SEÇÃO DE CONTATO COMPLETA & FORMULÁRIO RÁPIDO
+         6. CONTATO INTERATIVO & FORMULÁRIO RÁPIDO
          ==================================================================== -->
     <section id="contato">
       <div class="container">
         <div class="section-header reveal">
           <div>
-            <span class="section-kicker">05 • Conexão Direta</span>
+            <span class="section-kicker">04 • Conexão Direta</span>
             <h2 class="section-title">Vamos <span>Conversar?</span></h2>
             <p class="section-desc">
               Aberto a oportunidades como Desenvolvedor Full Stack, projetos sob medida e parcerias técnicas.
@@ -2950,7 +2365,6 @@
         </div>
 
         <div class="contact-grid">
-          <!-- Canais Diretos -->
           <div class="contact-cards reveal">
             <div class="spotlight-card c-card full">
               <div style="display:flex; align-items:center; gap:14px;">
@@ -3004,10 +2418,9 @@
             </div>
           </div>
 
-          <!-- Formulário Rápido -->
           <div class="spotlight-card contact-form-card reveal">
             <h3>Envie uma mensagem rápida</h3>
-            <p>Preencha abaixo e escolha se prefere abrir o envio pronto no WhatsApp ou no seu aplicativo de E-mail.</p>
+            <p>Preencha abaixo e abra o envio pronto diretamente no WhatsApp ou no seu aplicativo de E-mail.</p>
 
             <form id="quickContactForm" novalidate>
               <div class="form-group">
@@ -3022,10 +2435,10 @@
 
               <div class="form-group">
                 <label for="cfMessage">Mensagem</label>
-                <textarea id="cfMessage" class="form-textarea" placeholder="Conte um pouco sobre a oportunidade ou desafio..." required></textarea>
+                <textarea id="cfMessage" class="form-textarea" placeholder="Conte um pouco sobre a oportunidade ou projeto..." required></textarea>
               </div>
 
-              <div class="form-error" id="formError">Por favor, preencha seu nome, assunto e mensagem antes de enviar.</div>
+              <div class="form-error" id="formError">Por favor, preencha nome, assunto e mensagem antes de enviar.</div>
 
               <div class="form-buttons">
                 <button type="button" class="btn btn-primary" onclick="sendQuickContact('whatsapp')">
@@ -3043,7 +2456,7 @@
   </main>
 
   <!-- ======================================================================
-       8. RODAPÉ COMPLETO
+       RODAPÉ
        ====================================================================== -->
   <footer>
     <div class="container">
@@ -3055,7 +2468,6 @@
 
         <div class="footer-nav">
           <a href="#inicio">Início</a>
-          <a href="#sobre">Sobre</a>
           <a href="#projetos">Projetos</a>
           <a href="#stack">Stack</a>
           <a href="#experiencia">Experiência</a>
@@ -3070,13 +2482,13 @@
 
       <div class="footer-bottom">
         <span>© 2026 Enock Marques — Desenvolvedor Full Stack • Natal/RN</span>
-        <span>Desenvolvido em HTML5, CSS3 &amp; Vanilla JS</span>
+        <span>HTML5 · CSS3 · Vanilla JavaScript</span>
       </div>
     </div>
   </footer>
 
   <!-- ======================================================================
-       DRAWER LATERAL DE CASE STUDY DOS PROJETOS
+       DRAWER LATERAL (CASE STUDY COM IMAGEM REAL NO TOPO)
        ====================================================================== -->
   <div class="drawer-backdrop" id="caseDrawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
     <div class="drawer-panel" onclick="event.stopPropagation()">
@@ -3087,27 +2499,26 @@
         </button>
       </div>
 
+      <div class="drawer-preview">
+        <img id="drawerImg" src="" alt="" />
+      </div>
+
       <h3 class="drawer-title" id="drawerTitle">Título</h3>
       <div class="tech-tags" id="drawerTags"></div>
 
       <div class="drawer-section">
-        <h4>Desafio de Negócio</h4>
+        <h4>Problema Resolvido</h4>
         <p id="drawerChallenge"></p>
       </div>
 
       <div class="drawer-section">
-        <h4>Solução Técnica</h4>
-        <p id="drawerSolution"></p>
-      </div>
-
-      <div class="drawer-section">
-        <h4>Principais Funcionalidades</h4>
-        <ul class="drawer-list" id="drawerFeatures"></ul>
-      </div>
-
-      <div class="drawer-section">
-        <h4>Arquitetura &amp; Infra</h4>
+        <h4>Arquitetura da Solução</h4>
         <p id="drawerArch"></p>
+      </div>
+
+      <div class="drawer-section">
+        <h4>Funcionalidades Principais</h4>
+        <ul class="drawer-list" id="drawerFeatures"></ul>
       </div>
 
       <div class="drawer-footer" id="drawerFooter"></div>
@@ -3115,13 +2526,13 @@
   </div>
 
   <!-- ======================================================================
-       COMMAND PALETTE (CTRL+K / ⌘K)
+       COMMAND PALETTE (⌘K / CTRL+K)
        ====================================================================== -->
   <div class="cmd-backdrop" id="cmdBackdrop" role="dialog" aria-modal="true" aria-label="Command Palette">
     <div class="cmd-box" onclick="event.stopPropagation()">
       <div class="cmd-search-bar">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-        <input type="text" id="cmdInput" placeholder="Digite um comando, seção ou projeto..." autocomplete="off" />
+        <input type="text" id="cmdInput" placeholder="Buscar seção, projeto ou ação rápida..." autocomplete="off" />
         <kbd style="font-family:var(--font-mono); font-size:0.7rem; color:var(--text-muted);">ESC</kbd>
       </div>
       <div class="cmd-results" id="cmdResults"></div>
@@ -3135,65 +2546,68 @@
   </div>
 
   <!-- ======================================================================
-       JAVASCRIPT PURO (CANVAS, TYPING, IDE, RIFA INTERATIVA, DRAWER, ⌘K)
+       JAVASCRIPT PURO (VANILLA JS)
        ====================================================================== -->
   <script>
     /* ========================================================================
-       1. BASE DE DADOS DOS PROJETOS (CASE STUDIES)
+       1. DADOS DOS PROJETOS (CASE STUDIES COM CAMINHOS REAIS DAS IMAGENS)
        ======================================================================== */
     const CASE_STUDIES = {
       lotosmart: {
         kicker: "Projeto 01 • Em Produção",
         title: "LotoSmart — Análise Estatística de Loterias",
-        tags: ["Python", "FastAPI", "JavaScript", "PWA", "MySQL", "Docker"],
+        image: "assets/lotosmart.jpg",
+        fallback: "https://placehold.co/960x600/0d1117/10b981?text=LotoSmart+Dashboard",
+        alt: "Painel do sistema LotoSmart",
+        tags: ["Python", "FastAPI", "HTML/CSS/JS", "PWA", "MySQL", "Docker"],
         challenge:
-          "Apostadores costumam preencher jogos de forma aleatória sem visibilidade de padrões históricos, ciclos de dezenas ou ferramentas rápidas para conferir múltiplos volantes.",
-        solution:
-          "Desenvolvimento de uma plataforma web e PWA com motor estatístico próprio que ingere resultados oficiais da Caixa e gera combinações otimizadas e fechamentos matemáticos.",
-        features: [
-          "Suporte às 6 principais loterias: Lotofácil, Mega-Sena, Quina, Lotomania, Dupla Sena e +Milionária.",
-          "Sincronização automatizada de concursos oficiais e estimativas de prêmios.",
-          "Gerador inteligente com mapas térmicos, análise de ciclos e matrizes de fechamento.",
-          "Conferência automática de apostas salvas e painel Master administrativo."
-        ],
+          "Apostadores costumam montar jogos sem base estatística consolidada e perdem tempo conferindo concursos manualmente. O LotoSmart centraliza dados oficiais da Caixa e aplica cálculos estatísticos para decisões estratégicas.",
         arch:
-          "APIs REST de alta performance em Python + FastAPI, modelagem relacional em MySQL, interface PWA responsiva em JavaScript puro e deploy containerizado com Docker.",
+          "Back-end em Python com FastAPI servindo APIs RESTful de baixa latência, banco relacional MySQL, front-end leve em HTML/CSS/JS empacotado como PWA e infraestrutura containerizada com Docker.",
+        features: [
+          "Cobertura das 6 principais loterias da Caixa: +Milionária, Mega-Sena, Lotofácil, Quina, Lotomania e Dupla Sena.",
+          "Sincronização automatizada de sorteios oficiais e estimativas de prêmios.",
+          "Motor estatístico com ciclos de dezenas, mapas térmicos, fechamentos e gerador inteligente.",
+          "Conferência automática de apostas salvas e painel administrativo."
+        ],
         liveUrl: "http://lotosmart.online/"
       },
       drivepro: {
         kicker: "Projeto 02 • PWA Financeiro",
-        title: "Drive Pro — Gestão para Motoristas de App",
-        tags: ["Python", "Flask/FastAPI", "HTML/CSS/JS", "PWA", "MySQL", "Docker"],
+        title: "Drive Pro — Gestão para Motoristas",
+        image: "assets/drive_pro.jpg",
+        fallback: "https://placehold.co/800x500/0d1117/06b6d4?text=Drive+Pro+Dashboard",
+        alt: "Dashboard financeiro Drive Pro",
+        tags: ["Python", "Flask", "JavaScript", "MySQL", "PWA"],
         challenge:
-          "Motoristas de aplicativo frequentemente acompanham apenas o faturamento bruto, sem clareza real sobre custo por quilômetro rodado, consumo efetivo de combustível e lucro líquido.",
-        solution:
-          "Sistema PWA mobile-first focado em velocidade de lançamento durante os turnos, convertendo corridas e despesas em indicadores financeiros precisos e DRE visual.",
-        features: [
-          "Cálculo instantâneo de Lucro Líquido Operacional, Ganho/Hora, Custo/KM e Lucro/KM.",
-          "Gestão de metas diárias, semanais e mensais com barra de progresso em tempo real.",
-          "Módulo de abastecimento com auditoria de odômetro (km/L real) e autonomia restante.",
-          "Gráficos comparativos de Receitas vs. Despesas e distribuição de custos por categoria."
-        ],
+          "Motoristas de aplicativo e entregadores frequentemente acompanham apenas o faturamento bruto, sem clareza sobre custo por quilômetro rodado, consumo real de combustível e lucro líquido.",
         arch:
-          "Back-end Python (Flask/FastAPI) conectado a MySQL, front-end leve instalado como PWA no smartphone e ambiente padronizado via Docker.",
+          "Aplicação Full Stack construída com Python/Flask no back-end, persistência em MySQL e interface mobile-first em JavaScript puro empacotada como PWA para registro ágil durante os turnos.",
+        features: [
+          "Cálculo automático de Lucro Líquido Operacional, Ganho/Hora, Custo/KM e Lucro/KM.",
+          "Controle de turnos, corridas e metas de faturamento diárias, semanais e mensais.",
+          "Módulo de abastecimento com auditoria de odômetro e autonomia restante estimada.",
+          "Relatórios DRE e gráficos de receitas vs. despesas por categoria."
+        ],
         liveUrl: null
       },
       charifa: {
         kicker: "Projeto 03 • Web App Interativo",
-        title: "Chá Rifa Online — Gestão de Rifas & Eventos",
-        tags: ["Python", "JavaScript", "HTML5/CSS3", "SQL", "PIX & WhatsApp"],
+        title: "Chá Rifa Online",
+        image: "assets/cha_rifa.png",
+        fallback: "https://placehold.co/800x500/0d1117/f472b6?text=Cha+Rifa+Online",
+        alt: "Interface do sistema Chá Rifa Online",
+        tags: ["Python", "HTML5", "CSS3", "JavaScript", "SQL"],
         challenge:
-          "Gerenciar chás rifas em listas manuais de mensagens gera números duplicados, demora nas confirmações e falta de clareza sobre prêmios e opções de presentes.",
-        solution:
-          "Aplicação web responsiva com grade interativa de números, controle de status em tempo real e integração direta com PIX e WhatsApp para fechar reservas em segundos.",
-        features: [
-          "Grade interativa de números (ex: 01 a 200) com estados de Disponível, Aguardando e Confirmado.",
-          "Filtros rápidos por status e exibição clara de prêmios, data do sorteio e marcas sugeridas.",
-          "Fluxo guiado para escolha de presente ou contribuição direta via PIX.",
-          "Integração com WhatsApp para envio automático dos números reservados."
-        ],
+          "Organizar chás rifa manualmente por listas em grupos de mensagem gera reservas duplicadas, atraso nas confirmações e falta de clareza sobre prêmios e opções de contribuição.",
         arch:
-          "Front-end ágil em HTML5, CSS3 e JavaScript puro integrado a back-end Python e persistência relacional em banco SQL.",
+          "Front-end responsivo de carregamento instantâneo em HTML5, CSS3 e JavaScript puro integrado a API Python com controle transacional de status em banco SQL.",
+        features: [
+          "Seleção dinâmica de números em tempo real com controle de status (Disponível, Aguardando e Confirmado).",
+          "Filtros rápidos por status e vitrine clara de prêmios, data do sorteio e sugestões de presentes.",
+          "Integração direta com PIX e WhatsApp para confirmar reservas em segundos.",
+          "Interface mobile-first otimizada para compartilhamento em links e convites."
+        ],
         liveUrl: null
       }
     };
@@ -3215,7 +2629,7 @@
     const canvas = document.getElementById("heroCanvas");
     const ctx = canvas.getContext("2d");
     let particles = [];
-    const mouse = { x: null, y: null, radius: 130 };
+    const mouse = { x: null, y: null, radius: 135 };
 
     function resizeCanvas() {
       const heroEl = document.getElementById("inicio");
@@ -3226,13 +2640,13 @@
 
     function initParticles() {
       particles = [];
-      const count = Math.min(62, Math.floor((canvas.width * canvas.height) / 18000));
+      const count = Math.min(60, Math.floor((canvas.width * canvas.height) / 18500));
       for (let i = 0; i < count; i++) {
         particles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          vx: (Math.random() - 0.5) * 0.55,
-          vy: (Math.random() - 0.5) * 0.55,
+          vx: (Math.random() - 0.5) * 0.52,
+          vy: (Math.random() - 0.5) * 0.52,
           r: Math.random() * 1.8 + 1.1,
           color: i % 2 === 0 ? "rgba(16, 185, 129, 0.75)" : "rgba(6, 182, 212, 0.75)"
         });
@@ -3250,19 +2664,14 @@
         if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
         if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
 
-        // Desenha nó
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         ctx.fillStyle = p.color;
         ctx.fill();
 
-        // Conexões entre nós próximos
         for (let j = i + 1; j < particles.length; j++) {
           const p2 = particles[j];
-          const dx = p.x - p2.x;
-          const dy = p.y - p2.y;
-          const dist = Math.hypot(dx, dy);
-
+          const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
           if (dist < 130) {
             ctx.beginPath();
             ctx.strokeStyle = `rgba(6, 182, 212, ${(1 - dist / 130) * 0.22})`;
@@ -3273,7 +2682,6 @@
           }
         }
 
-        // Conexão com o cursor do mouse
         if (mouse.x !== null && mouse.y !== null) {
           const distMouse = Math.hypot(p.x - mouse.x, p.y - mouse.y);
           if (distMouse < mouse.radius) {
@@ -3302,13 +2710,13 @@
     window.addEventListener("resize", resizeCanvas);
 
     /* ========================================================================
-       4. EFEITO DE DIGITAÇÃO (TYPING EFFECT) NO HERO
+       4. TYPEWRITER NO SUBTÍTULO DO HERO
        ======================================================================== */
     const TYPING_PHRASES = [
-      "Desenvolvedor Full Stack",
-      "Python • FastAPI • Flask",
-      "JavaScript • SQL • Docker",
-      "Automações & IA Generativa"
+      "Sistemas web escaláveis de ponta a ponta",
+      "Automação inteligente de processos operacionais",
+      "Análise de dados, SQL e dashboards estratégicos",
+      "APIs RESTful com Python, FastAPI e Docker"
     ];
     let phraseIdx = 0;
     let charIdx = 0;
@@ -3322,7 +2730,7 @@
         charIdx++;
         if (charIdx === current.length) {
           isDeleting = true;
-          setTimeout(runTyping, 1700);
+          setTimeout(runTyping, 1800);
           return;
         }
       } else {
@@ -3333,17 +2741,17 @@
           phraseIdx = (phraseIdx + 1) % TYPING_PHRASES.length;
         }
       }
-      setTimeout(runTyping, isDeleting ? 38 : 68);
+      setTimeout(runTyping, isDeleting ? 34 : 58);
     }
 
     /* ========================================================================
-       5. CONTADORES ANIMADOS DE MÉTRICAS
+       5. CONTADORES ANIMADOS
        ======================================================================== */
     function animateCounters() {
       document.querySelectorAll(".counter").forEach((el) => {
         const target = parseInt(el.dataset.target, 10);
         let current = 0;
-        const stepTime = Math.max(40, Math.floor(900 / target));
+        const stepTime = Math.max(45, Math.floor(900 / target));
         const timer = setInterval(() => {
           current++;
           el.textContent = current;
@@ -3353,7 +2761,7 @@
     }
 
     /* ========================================================================
-       6. WIDGET INTERATIVO IDE / TERMINAL EXECUTÁVEL
+       6. WIDGET IDE / TERMINAL EXECUTÁVEL
        ======================================================================== */
     document.querySelectorAll(".ide-tab").forEach((tab) => {
       tab.addEventListener("click", () => {
@@ -3372,10 +2780,10 @@
       terminalOutput.innerHTML = "";
       const lines = [
         `<span class="info">$</span> python3 healthcheck.py --env=production`,
-        `<span class="ok">[OK]</span> Python 3.12 + FastAPI/Flask runtime verificado`,
-        `<span class="ok">[OK]</span> Docker Engine &amp; MySQL/PostgreSQL pool conectados`,
-        `<span class="ok">[OK]</span> LotoSmart (lotosmart.online) → 200 OK (latência 42ms)`,
-        `<span class="info">[READY]</span> Enock Marques disponível para novos desafios Full Stack.`
+        `<span class="ok">[OK]</span> Python + FastAPI/Flask runtime verificado`,
+        `<span class="ok">[OK]</span> Docker Engine &amp; bancos SQL conectados`,
+        `<span class="ok">[OK]</span> LotoSmart (lotosmart.online) → 200 OK`,
+        `<span class="info">[READY]</span> Enock Marques disponível para oportunidades Full Stack.`
       ];
 
       lines.forEach((line, idx) => {
@@ -3384,54 +2792,13 @@
           div.innerHTML = line;
           terminalOutput.appendChild(div);
           terminalOutput.scrollTop = terminalOutput.scrollHeight;
-          if (idx === lines.length - 1) {
-            runDiagBtn.disabled = false;
-          }
+          if (idx === lines.length - 1) runDiagBtn.disabled = false;
         }, idx * 340);
       });
     });
 
     /* ========================================================================
-       7. MINI GRADE INTERATIVA DO CHÁ RIFA (CLICÁVEL NO CARD)
-       ======================================================================== */
-    const rifaGrid = document.getElementById("rifaMiniGrid");
-    const confirmedNums = new Set([1, 2, 6, 10]);
-    const selectedNums = new Set([4, 9]);
-
-    function renderRifaGrid() {
-      rifaGrid.innerHTML = "";
-      for (let n = 1; n <= 18; n++) {
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "rifa-num-btn";
-        btn.textContent = String(n).padStart(2, "0");
-
-        if (confirmedNums.has(n)) {
-          btn.classList.add("confirmed");
-          btn.title = `Número ${n}: Confirmado`;
-        } else {
-          if (selectedNums.has(n)) btn.classList.add("selected");
-          btn.title = `Clique para reservar ou liberar o número ${n}`;
-          btn.addEventListener("click", (e) => {
-            e.stopPropagation();
-            if (selectedNums.has(n)) {
-              selectedNums.delete(n);
-            } else {
-              selectedNums.add(n);
-            }
-            renderRifaGrid();
-          });
-        }
-        rifaGrid.appendChild(btn);
-      }
-
-      document.getElementById("rifaDoneCount").textContent = confirmedNums.size;
-      document.getElementById("rifaWaitCount").textContent = selectedNums.size;
-      document.getElementById("rifaFreeCount").textContent = 18 - confirmedNums.size - selectedNums.size;
-    }
-
-    /* ========================================================================
-       8. FILTROS DE PROJETOS E ABAS DA STACK
+       7. FILTROS DE PROJETOS & ABAS DA STACK
        ======================================================================== */
     document.querySelectorAll(".filter-btn").forEach((btn) => {
       btn.addEventListener("click", () => {
@@ -3459,7 +2826,7 @@
     });
 
     /* ========================================================================
-       9. EFEITO SPOTLIGHT QUE SEGUE O MOUSE NOS CARDS
+       8. SPOTLIGHT NOS CARDS
        ======================================================================== */
     document.querySelectorAll(".spotlight-card").forEach((card) => {
       card.addEventListener("mousemove", (e) => {
@@ -3470,7 +2837,7 @@
     });
 
     /* ========================================================================
-       10. DRAWER LATERAL (CASE STUDY DOS PROJETOS)
+       9. DRAWER LATERAL (CASE STUDY COM IMAGEM REAL)
        ======================================================================== */
     const caseDrawer = document.getElementById("caseDrawer");
 
@@ -3478,10 +2845,17 @@
       const data = CASE_STUDIES[key];
       if (!data) return;
 
+      const drawerImg = document.getElementById("drawerImg");
+      drawerImg.onerror = () => {
+        drawerImg.onerror = null;
+        drawerImg.src = data.fallback;
+      };
+      drawerImg.src = data.image;
+      drawerImg.alt = data.alt;
+
       document.getElementById("drawerKicker").textContent = data.kicker;
       document.getElementById("drawerTitle").textContent = data.title;
       document.getElementById("drawerChallenge").textContent = data.challenge;
-      document.getElementById("drawerSolution").textContent = data.solution;
       document.getElementById("drawerArch").textContent = data.arch;
 
       document.getElementById("drawerTags").innerHTML = data.tags
@@ -3494,7 +2868,7 @@
 
       let footer = "";
       if (data.liveUrl) {
-        footer += `<a href="${data.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Acessar Sistema ↗</a>`;
+        footer += `<a href="${data.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Acessar sistema ↗</a>`;
       }
       footer += `<a href="https://github.com/Marquess12" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Ver GitHub ↗</a>`;
       document.getElementById("drawerFooter").innerHTML = footer;
@@ -3512,7 +2886,7 @@
     document.getElementById("closeDrawerBtn").addEventListener("click", closeCaseDrawer);
 
     /* ========================================================================
-       11. COMMAND PALETTE INTERATIVA (CTRL+K / ⌘K)
+       10. COMMAND PALETTE (⌘K / CTRL+K)
        ======================================================================== */
     const cmdBackdrop = document.getElementById("cmdBackdrop");
     const cmdInput = document.getElementById("cmdInput");
@@ -3520,14 +2894,13 @@
 
     const COMMANDS = [
       { label: "Ir para Início", hint: "SEÇÃO", action: () => scrollToSection("#inicio") },
-      { label: "Ir para Sobre & Diferenciais", hint: "SEÇÃO", action: () => scrollToSection("#sobre") },
       { label: "Ir para Projetos em Destaque", hint: "SEÇÃO", action: () => scrollToSection("#projetos") },
-      { label: "Ir para Stack Tecnológica", hint: "SEÇÃO", action: () => scrollToSection("#stack") },
-      { label: "Ir para Trajetória & Formação", hint: "SEÇÃO", action: () => scrollToSection("#experiencia") },
+      { label: "Ir para Hard Skills & Stack", hint: "SEÇÃO", action: () => scrollToSection("#stack") },
+      { label: "Ir para Experiência & Formação", hint: "SEÇÃO", action: () => scrollToSection("#experiencia") },
       { label: "Ir para Contato", hint: "SEÇÃO", action: () => scrollToSection("#contato") },
-      { label: "Abrir Case: LotoSmart", hint: "PROJETO", action: () => openCaseDrawer("lotosmart") },
-      { label: "Abrir Case: Drive Pro", hint: "PROJETO", action: () => openCaseDrawer("drivepro") },
-      { label: "Abrir Case: Chá Rifa Online", hint: "PROJETO", action: () => openCaseDrawer("charifa") },
+      { label: "Abrir Case Study: LotoSmart", hint: "PROJETO", action: () => openCaseDrawer("lotosmart") },
+      { label: "Abrir Case Study: Drive Pro", hint: "PROJETO", action: () => openCaseDrawer("drivepro") },
+      { label: "Abrir Case Study: Chá Rifa Online", hint: "PROJETO", action: () => openCaseDrawer("charifa") },
       { label: "Copiar E-mail (enockmarques12@gmail.com)", hint: "COPY", action: () => copyEmail() },
       { label: "Abrir GitHub (Marquess12)", hint: "LINK ↗", action: () => window.open("https://github.com/Marquess12", "_blank") },
       { label: "Abrir LinkedIn", hint: "LINK ↗", action: () => window.open("https://www.linkedin.com/in/enock-marques-dev", "_blank") },
@@ -3592,7 +2965,7 @@
     });
 
     /* ========================================================================
-       12. MENU MOBILE, SCROLL SPY & REVEAL ESCALONADO
+       11. MENU MOBILE, SCROLL SPY & REVEAL
        ======================================================================== */
     const menuToggle = document.getElementById("menuToggle");
     const navLinks = document.getElementById("navLinks");
@@ -3638,7 +3011,7 @@
     document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
 
     /* ========================================================================
-       13. COPIAR E-MAIL, FORMULÁRIO RÁPIDO & TOAST
+       12. COPIAR E-MAIL, FORMULÁRIO RÁPIDO & TOAST
        ======================================================================== */
     let toastTimer = null;
     function showToast(msg) {
@@ -3686,19 +3059,18 @@
       } else {
         const body = `Olá Enock,\n\nMe chamo ${name}.\n\n${message}`;
         window.location.href = `mailto:enockmarques12@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        showToast("Abrindo cliente de e-mail...");
+        showToast("Abrindo aplicativo de e-mail...");
       }
     }
 
     /* ========================================================================
-       14. INICIALIZAÇÃO NO CARREGAMENTO DA PÁGINA
+       13. INICIALIZAÇÃO
        ======================================================================== */
     window.addEventListener("load", () => {
       resizeCanvas();
       animateCanvas();
       runTyping();
       animateCounters();
-      renderRifaGrid();
     });
   </script>
 </body>
